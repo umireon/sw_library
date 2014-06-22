@@ -62,7 +62,6 @@
                 <version>2.2.0</version>
                 <configuration>
                     <repoToken>${env.COVERALLS_TOKEN}</repoToken>
-                    <sourceDirectories>src/main/java</sourceDirectories>
                 </configuration>
             </plugin>
         </plugins>
