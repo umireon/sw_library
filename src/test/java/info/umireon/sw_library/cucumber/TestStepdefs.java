@@ -57,7 +57,6 @@ public class TestStepdefs {
     @もし("^(.*)と入力する$")
     public void と入力する(String input) throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
-        writer.flush();
         writer.println(input);
         this.main.start(new String[0]);
     }
