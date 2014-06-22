@@ -36,11 +36,7 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import org.junit.Assert;
 
-/**
- *
- * @author umireon
- */
-public class TestStepdefs {
+public final class TestStepdefs {
     private SwLibraryMain main;
     private final PipedOutputStream in = new PipedOutputStream();
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -50,18 +46,16 @@ public class TestStepdefs {
     public void 初期化されている() throws IOException {
         PipedInputStream stdin = new PipedInputStream(in);
         PrintStream stdout = new PrintStream(out);
-        PrintStream stderr = new PrintStream(err);
-        this.main = new SwLibraryMain(stdin, stdout, stderr);
+        this.main = new SwLibraryMain(stdin, stdout);
     }
     
     @もし("^(.*)と入力する$")
     public void と入力する(String input) throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
-        writer.flush();
         writer.println(input);
         this.main.start(new String[0]);
     }
-    
+
     @ならば("^(.*)と出力される")
     public void と出力される(String output) {
         String line = out.toString().trim();
