@@ -28,49 +28,63 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.PrintStream;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
  * @author umireon
  */
-public class SwLibraryMain {
+public final class SwLibraryMain {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException 入出力エラー
      */
-    public static void main(String[] args) {
-        SwLibraryMain main = new SwLibraryMain(System.in, System.out, System.err);
+    public static void main(final String[] args) throws IOException {
+        SwLibraryMain main;
+        main = new SwLibraryMain(System.in, System.out);
         main.start(args);
     }
-    
-    public Logger logger = Logger.getGlobal();
 
-    public final InputStream stdin;
-    public final PrintStream stdout;
-    public final PrintStream stderr;
+    /**
+     * ロガー.
+     */
+    public static final Logger LOGGER = Logger.getGlobal();
 
-    public SwLibraryMain(InputStream stdin, PrintStream stdout, PrintStream stderr) {
-        this.stdin = stdin;
-        this.stdout = stdout;
-        this.stderr = stderr;
+    /**
+     * 標準入力.
+     */
+    private final transient InputStream stdin;
+
+    /**
+     * 標準出力.
+     */
+    private final transient PrintStream stdout;
+
+    /**
+     * 標準入出力とともに，インスタンスを生成する.
+     * @param sin 標準入力
+     * @param sout 標準出力
+     */
+    public SwLibraryMain(final InputStream sin, final PrintStream sout) {
+        this.stdin = sin;
+        this.stdout = sout;
     }
-    
-    public void start(String[] args) {
-        InputStreamReader isr = new InputStreamReader(stdin);
-        BufferedReader reader = new BufferedReader(isr);
+
+    /**
+     * アプリケーションを開始する.
+     * @param args 引数
+     * @throws IOException 標準入力が読めない
+     */
+    public void start(final String[] args) throws IOException {
+        InputStreamReader isr;
+        isr = new InputStreamReader(stdin);
+        BufferedReader reader;
+        reader = new BufferedReader(isr);
+
         String line;
-        try {
-            line = reader.readLine();
-        } catch (IOException e) {
-            logger.log(Level.SEVERE, "IOException", e);
-            System.exit(1);
-            return;
-        }
+        line = reader.readLine();
         stdout.println(line);
     }
-    
 }
