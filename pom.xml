@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>info.umireon</groupId>
     <artifactId>sw_library</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <scm>
-        <connection>scm:git:https://github.com/umireon/sw_library.git</connection>
-        <url>https://github.com/umireon/sw_library</url>
-    </scm>
     <dependencies>
         <dependency>
             <groupId>info.cukes</groupId>
@@ -36,6 +33,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <github.global.oauth2Token>${env.GITHUB_OAUTH2TOKEN}</github.global.oauth2Token>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -106,4 +104,13 @@
             </plugin-->
         </plugins>
     </reporting>
+
+    <ciManagement>
+        <system>drone.io</system>
+        <url>https://drone.io/github.com/umireon/sw_library</url>
+    </ciManagement>
+    <scm>
+        <connection>scm:git:https://github.com/umireon/sw_library.git</connection>
+        <url>https://github.com/umireon/sw_library</url>
+    </scm>
 </project>
