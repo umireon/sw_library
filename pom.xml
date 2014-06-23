@@ -5,6 +5,10 @@
     <artifactId>sw_library</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
+    <scm>
+        <connection>scm:git:https://github.com/umireon/sw_library.git</connection>
+        <url>https://github.com/umireon/sw_library</url>
+    </scm>
     <dependencies>
         <dependency>
             <groupId>info.cukes</groupId>
@@ -30,6 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <github.global.oauth2Token>${env.GITHUB_OAUTH2TOKEN}</github.global.oauth2Token>
     </properties>
     <build>
         <plugins>
@@ -63,6 +68,22 @@
                 <configuration>
                     <repoToken>${env.COVERALLS_TOKEN}</repoToken>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.9</version>
+                <configuration>
+                    <message>Creating site for ${project.version}</message>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
