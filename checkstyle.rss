@@ -46,7 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#info.umireon.sw_library.package-info.java">info/umireon/sw_library/package-info.java</a>
+                  <a href="${project.url}/checkstyle.html#info.umireon.sw_library.SwLibraryMain.java">info/umireon/sw_library/SwLibraryMain.java</a>
                 </td>
                 <td>
                   0
@@ -60,7 +60,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#info.umireon.sw_library.SwLibraryMain.java">info/umireon/sw_library/SwLibraryMain.java</a>
+                  <a href="${project.url}/checkstyle.html#info.umireon.sw_library.package-info.java">info/umireon/sw_library/package-info.java</a>
                 </td>
                 <td>
                   0
