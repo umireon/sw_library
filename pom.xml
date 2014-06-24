@@ -120,6 +120,8 @@
         </plugins>
     </reporting>
     
+    <name>図書館ドメインの実装</name>
+    <description>このプロジェクトは，ソフトウェア工学の課題として，図書館ドメインを実装するものです．</description>
     <url>http://umireon.github.io/sw_library/</url>
     <licenses>
         <license>
