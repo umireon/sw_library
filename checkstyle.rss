@@ -19,9 +19,9 @@ under the License.
 -->
 <rss version="0.91">
   <channel>
-    <title>sw_library - Checkstyle report</title>
+    <title>図書館ドメインの実装 - Checkstyle report</title>
     <link>http://umireon.github.io/sw_library/</link>
-    <description>sw_library - Checkstyle report</description>
+    <description>図書館ドメインの実装 - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2014</copyright>
     <item>
