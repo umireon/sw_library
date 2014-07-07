@@ -37,7 +37,7 @@ import java.util.Queue;
 public abstract class EntityMaterial {
     private final String name;
     private EntityStatus status = null;
-    private Queue<EntityReservation> reservations;
+    private final Queue<EntityReservation> reservations;
 
     public EntityMaterial(final String name) {
         if (name == null) {
@@ -59,15 +59,15 @@ public abstract class EntityMaterial {
     public void setStatus(EntityStatus status) {
         this.status = status;
     }
-    
+
     public void addReservation(EntityReservation reservation) {
         reservations.add(reservation);
     }
-    
+
     public EntityReservation peekReservation() {
         return reservations.peek();
     }
-    
+
     public EntityReservation pollReservation() {
         return reservations.poll();
     }

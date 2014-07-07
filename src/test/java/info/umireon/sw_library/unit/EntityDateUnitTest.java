@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.junit;
+package info.umireon.sw_library.unit;
 
 import info.umireon.sw_library.EntityDate;
 import java.text.SimpleDateFormat;

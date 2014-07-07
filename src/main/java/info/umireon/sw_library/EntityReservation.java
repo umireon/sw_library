@@ -29,7 +29,7 @@ package info.umireon.sw_library;
  * @author umireon
  */
 public class EntityReservation {
-    private EntityUser reserver;
+    private final EntityUser reserver;
 
     public EntityReservation(EntityUser reserver) {
         this.reserver = reserver;

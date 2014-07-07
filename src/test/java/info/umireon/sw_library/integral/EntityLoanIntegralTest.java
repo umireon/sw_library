@@ -22,33 +22,38 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.junit;
+package info.umireon.sw_library.integral;
 
-import info.umireon.sw_library.EntityMagazine;
+import info.umireon.sw_library.EntityDate;
+import info.umireon.sw_library.EntityLoan;
+import info.umireon.sw_library.EntityUser;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
  * @author umireon
  */
-public class EntityMagazineUnitTest {
+public class EntityLoanIntegralTest {
+    private EntityLoan loan;
+    private EntityUser borrower;
+    private EntityDate due;
+    
+    @Before
+    public void setup() {
+        borrower = new EntityUser("borrower");
+        due = new EntityDate().addDays(14);
+        loan = new EntityLoan(borrower, due);
+    }
     
     @Test
-    public void nullname() {
-        EntityMagazine mag = null;
-        try {
-            mag = new EntityMagazine(null);
-        } catch (IllegalArgumentException e) {
-            assertNotNull(e);
-        }
-        assertNull(mag);
+    public void getBorrower() {
+        assertEquals(borrower, loan.getBorrower());
     }
-
+    
     @Test
-    public void name() {
-        EntityMagazine mag;
-        mag = new EntityMagazine("magname");
-        assertEquals("magname", mag.getName());
+    public void getDue() {
+        assertEquals(due, loan.getDue());
     }
 }

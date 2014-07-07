@@ -22,37 +22,23 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library;
+package info.umireon.sw_library.integral;
+
+import info.umireon.sw_library.EntityReservation;
+import info.umireon.sw_library.EntityUser;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author umireon
  */
-public class EntityLoan extends EntityStatus {
-    private final EntityUser borrower;
-    private final EntityDate due;
-
-    public EntityLoan(EntityUser borrower, EntityDate due) {
-        this.borrower = borrower;
-        this.due = due;
+public class EntityReservationIntegralTest {
+    @Test
+    public void getReserver() {
+        EntityUser reserver = new EntityUser("reserver");
+        EntityReservation reserve = new EntityReservation(reserver);
+        assertEquals(reserver, reserve.getReserver());
     }
-
-    public EntityUser getBorrower() {
-        return borrower;
-    }
-
-    public EntityDate getDue() {
-        return due;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder str = new StringBuilder();
-        str.append("貸出中(");
-        str.append(borrower.getName());
-        str.append("; ");
-        str.append(due);
-        str.append(")");
-        return str.toString();
-    }
+    
 }
