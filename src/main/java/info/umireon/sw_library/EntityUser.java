@@ -32,6 +32,10 @@ public class EntityUser {
     private final String name;
 
     public EntityUser(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException();
+        }
+
         this.name = name;
     }
 

@@ -24,45 +24,32 @@
 
 package info.umireon.sw_library.junit;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import info.umireon.sw_library.EntityBook;
+import info.umireon.sw_library.EntityMaterial;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author umireon
  */
-public class NewEmptyJUnitTest {
-    
-    public NewEmptyJUnitTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
+public class EntityBookUnitTest {
     
     @Test
-    public void tテスト() {
-        //Assert.assertEquals("ああ", 0, 1);
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+    public void nullname() {
+        EntityBook book = null;
+        try {
+            book = new EntityBook(null);
+        } catch (IllegalArgumentException e) {
+            assertNotNull(e);
+        }
+        assertNull(book);
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void name() {
+        EntityBook book;
+        book = new EntityBook("bookname");
+        assertEquals("bookname", book.getName());
+    }
 }

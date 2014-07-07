@@ -22,57 +22,33 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library;
+package info.umireon.sw_library.junit;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
-import java.util.Queue;
+import info.umireon.sw_library.EntityMagazine;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author umireon
  */
-public abstract class EntityMaterial {
-    private final String name;
-    private EntityStatus status = null;
-    private Queue<EntityReservation> reservations;
-
-    public EntityMaterial(final String name) {
-        if (name == null) {
-            throw new IllegalArgumentException();
+public class EntityMagazineUnitTest {
+    
+    @Test
+    public void nullname() {
+        EntityMagazine mag = null;
+        try {
+            mag = new EntityMagazine(null);
+        } catch (IllegalArgumentException e) {
+            assertNotNull(e);
         }
-
-        this.name = name;
-        this.reservations = new ArrayDeque<>();
+        assertNull(mag);
     }
 
-    public String getName() {
-        return name;
-    }
-    
-    public EntityStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(EntityStatus status) {
-        this.status = status;
-    }
-    
-    public void addReservation(EntityReservation reservation) {
-        reservations.add(reservation);
-    }
-    
-    public EntityReservation peekReservation() {
-        return reservations.peek();
-    }
-    
-    public EntityReservation pollReservation() {
-        return reservations.poll();
-    }
-    
-    public boolean isReserved() {
-        return !reservations.isEmpty();
+    @Test
+    public void name() {
+        EntityMagazine mag;
+        mag = new EntityMagazine("magname");
+        assertEquals("magname", mag.getName());
     }
 }

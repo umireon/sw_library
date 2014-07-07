@@ -29,5 +29,4 @@ package info.umireon.sw_library;
  * @author umireon
  */
 public class ReservedMaterialException extends Exception {
-    
 }
