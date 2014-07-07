@@ -24,10 +24,8 @@
 
 package info.umireon.sw_library;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.logging.Logger;
 
@@ -78,13 +76,32 @@ public final class SwLibraryMain {
      * @throws IOException 標準入力が読めない
      */
     public void start(final String[] args) throws IOException {
-        InputStreamReader isr;
-        isr = new InputStreamReader(stdin);
-        BufferedReader reader;
-        reader = new BufferedReader(isr);
+        EntityBook book1, book2;
+        EntityMagazine mag1;
+        EntityUser user1, user2;
+        EntityReservation res1;
 
-        String line;
-        line = reader.readLine();
-        stdout.println(line);
+        user1 = new EntityUser("user1");
+        user2 = new EntityUser("user2");
+        
+        res1 = new EntityReservation(user1);
+
+        book1 = new EntityBook("book1");
+        book2 = new EntityBook("book2");
+        book2.setStatus(new EntityLoan(user2, new EntityDate()));
+        mag1 = new EntityMagazine("mag1");
+        mag1.addReservation(res1);
+
+        ControlMaterial ctrlMaterial = new ControlMaterial();
+        ctrlMaterial.addMaterial(book1);
+        ctrlMaterial.addMaterial(book2);
+        ctrlMaterial.addMaterial(mag1);
+        ControlUser ctrlUser = new ControlUser();
+        ctrlUser.addUser(user1);
+        ctrlUser.addUser(user2);
+        BoundaryLend boundLend = new BoundaryLend(ctrlMaterial, ctrlUser,
+                stdin, stdout);
+        
+        boundLend.listen();
     }
 }
