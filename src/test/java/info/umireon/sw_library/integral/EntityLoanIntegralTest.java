@@ -56,4 +56,9 @@ public class EntityLoanIntegralTest {
     public void getDue() {
         assertEquals(due, loan.getDue());
     }
+    
+    @Test
+    public void toStr() {
+        assertTrue(loan.toString() instanceof String);
+    }
 }
