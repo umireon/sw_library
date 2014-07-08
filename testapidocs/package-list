@@ -1,2 +1,4 @@
 info.umireon.sw_library.cucumber
-info.umireon.sw_library.junit
+info.umireon.sw_library.integraltest
+info.umireon.sw_library.systemtest
+info.umireon.sw_library.unittest

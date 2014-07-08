@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BoundaryLend.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">図書館ドメインの実装</a> &gt; <a href="index.source.html" class="el_package">info.umireon.sw_library</a> &gt; <span class="el_source">BoundaryLend.java</span></div><h1>BoundaryLend.java</h1><pre class="source lang-java linenums">/*
+ * The MIT License
+ *
+ * Copyright 2014 umireon.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+package info.umireon.sw_library;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+
+
+/**
+ *
+ * @author umireon
+ */
+public class BoundaryLend {
+    private final ControlMaterial ctrlMaterial;
+    private final ControlUser ctrlUser;
+    private final InputStream stdin;
+    private final PrintStream stdout;
+
+    public BoundaryLend(final ControlMaterial ctrlMaterial,
+            final ControlUser ctrlUser,
+<span class="fc" id="L46">            final InputStream stdin, final PrintStream stdout) {</span>
+<span class="fc" id="L47">        this.ctrlMaterial = ctrlMaterial;</span>
+<span class="fc" id="L48">        this.ctrlUser = ctrlUser;</span>
+<span class="fc" id="L49">        this.stdin = stdin;</span>
+<span class="fc" id="L50">        this.stdout = stdout;</span>
+<span class="fc" id="L51">    }</span>
+
+    public void listen() {
+<span class="fc" id="L54">        stdout.println(&quot;資料貸出システム (v0.0.1)&quot;);</span>
+<span class="fc" id="L55">        InputStreamReader isr = new InputStreamReader(stdin);</span>
+<span class="fc" id="L56">        BufferedReader br = new BufferedReader(isr);</span>
+        
+<span class="fc" id="L58">        indexMaterials();</span>
+<span class="fc" id="L59">        indexUsers();</span>
+
+        try {
+<span class="fc" id="L62">            stdout.print(&quot;貸出者氏名&gt; &quot;);</span>
+<span class="fc" id="L63">            String borrowerName = br.readLine();</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">            if (borrowerName == null) System.exit(0);</span>
+<span class="fc" id="L65">            EntityUser borrower = ctrlUser.getUser(borrowerName);</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">            if (borrower == null) {</span>
+<span class="fc" id="L67">                ctrlUser.addUser(new EntityUser(borrowerName));</span>
+<span class="fc" id="L68">                borrower = ctrlUser.getUser(borrowerName);</span>
+<span class="fc" id="L69">                noticeUserRegistration(borrower);</span>
+            }
+
+<span class="fc" id="L72">            stdout.print(&quot;貸出資料名&gt; &quot;);</span>
+<span class="fc" id="L73">            String materialName = br.readLine();</span>
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">            if (materialName == null) return;</span>
+<span class="fc" id="L75">            ctrlMaterial.lendMaterial(materialName, borrower);</span>
+<span class="fc" id="L76">            indexMaterials();</span>
+<span class="nc" id="L77">        } catch (IOException e) {</span>
+<span class="nc" id="L78">            e.printStackTrace();</span>
+<span class="fc" id="L79">        } catch (UnknownMaterialException e) {</span>
+<span class="fc" id="L80">            stdout.println(&quot;指定された資料は存在しません&quot;);</span>
+<span class="fc" id="L81">        } catch (UnavailableMaterialException e) {</span>
+<span class="fc" id="L82">            stdout.println(&quot;指定された資料は貸出できません&quot;);</span>
+<span class="fc" id="L83">        } catch (ReservedMaterialException e) {</span>
+<span class="fc" id="L84">            stdout.println(&quot;指定された資料は予約されています&quot;);</span>
+<span class="pc" id="L85">        }</span>
+<span class="fc" id="L86">    }</span>
+    
+    private void indexMaterials() {
+<span class="fc" id="L89">        stdout.println(&quot;資料一覧:&quot;);</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        for (EntityMaterial material : ctrlMaterial.getMaterials()) {</span>
+<span class="fc" id="L91">            StringBuilder str = new StringBuilder();</span>
+<span class="fc" id="L92">            str.append(&quot;  - &quot;);</span>
+<span class="fc" id="L93">            str.append(material.getName());</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">            if (material.getStatus() != null) {</span>
+<span class="fc" id="L95">                str.append(&quot; &quot;);</span>
+<span class="fc" id="L96">                str.append(material.getStatus().toString());</span>
+            }
+<span class="fc bfc" id="L98" title="All 2 branches covered.">            if (material.isReserved()) {</span>
+<span class="fc" id="L99">                str.append(&quot; 予約(&quot;);</span>
+<span class="fc" id="L100">                str.append(material.peekReservation().getReserver().getName());</span>
+<span class="fc" id="L101">                str.append(&quot;)&quot;);</span>
+            }
+<span class="fc" id="L103">            stdout.println(str.toString());</span>
+<span class="fc" id="L104">        }</span>
+<span class="fc" id="L105">    }</span>
+    
+    private void indexUsers() {
+<span class="fc" id="L108">        stdout.println(&quot;利用者一覧:&quot;);</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        for (EntityUser user : ctrlUser.getUsers()) {</span>
+<span class="fc" id="L110">            StringBuilder str = new StringBuilder();</span>
+<span class="fc" id="L111">            str.append(&quot;  - &quot;);</span>
+<span class="fc" id="L112">            str.append(user.getName());</span>
+<span class="fc" id="L113">            stdout.println(str.toString());</span>
+<span class="fc" id="L114">        }</span>
+<span class="fc" id="L115">    }</span>
+    
+    private void noticeUserRegistration(EntityUser registered) {
+<span class="fc" id="L118">        stdout.println(&quot;次のユーザが登録されました: &quot; + registered.getName());</span>
+<span class="fc" id="L119">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
