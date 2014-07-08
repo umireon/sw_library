@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.unit;
+package info.umireon.sw_library.unittest;
 
 import info.umireon.sw_library.EntityMagazine;
 import org.junit.Test;

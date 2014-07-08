@@ -22,10 +22,9 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.integral;
+package info.umireon.sw_library.unittest;
 
-import info.umireon.sw_library.EntityReservation;
-import info.umireon.sw_library.EntityUser;
+import info.umireon.sw_library.ReservedMaterialException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -33,12 +32,13 @@ import static org.junit.Assert.*;
  *
  * @author umireon
  */
-public class EntityReservationIntegralTest {
+public class ReservedMaterialExceptionUnitTest {
     @Test
-    public void getReserver() {
-        EntityUser reserver = new EntityUser("reserver");
-        EntityReservation reserve = new EntityReservation(reserver);
-        assertEquals(reserver, reserve.getReserver());
+    public void exception() {
+        try {
+            throw new ReservedMaterialException();
+        } catch (ReservedMaterialException e) {
+            assertNotNull(e);
+        }
     }
-    
 }

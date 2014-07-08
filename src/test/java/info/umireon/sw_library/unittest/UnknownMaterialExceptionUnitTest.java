@@ -22,41 +22,23 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.integral;
+package info.umireon.sw_library.unittest;
 
-import info.umireon.sw_library.ControlUser;
-import info.umireon.sw_library.EntityUser;
+import info.umireon.sw_library.UnknownMaterialException;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Before;
 
 /**
  *
  * @author umireon
  */
-public class ControlUserIntegralTest {
-    private ControlUser ctrlUser;
-    
-    @Before
-    public void setup() {
-        ctrlUser = new ControlUser();
-    }
-    
+public class UnknownMaterialExceptionUnitTest {
     @Test
-    public void ctrlHasZeroUserInitially() {
-        assertEquals(ctrlUser.getUsers().size(), 0);
-    }
-    
-    @Test
-    public void getUserNullForNonexistent() {
-        assertNull(ctrlUser.getUser("nonexistent"));
-    }
-    
-    @Test
-    public void getUser() {
-        EntityUser user = new EntityUser("user1");
-        ctrlUser.addUser(user);
-        assertEquals(ctrlUser.getUsers().size(), 1);
-        assertEquals(ctrlUser.getUser("user1"), user);
+    public void exception() {
+        try {
+            throw new UnknownMaterialException();
+        } catch (UnknownMaterialException e) {
+            assertNotNull(e);
+        }
     }
 }

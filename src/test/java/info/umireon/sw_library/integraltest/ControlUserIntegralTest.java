@@ -22,38 +22,41 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.unit;
+package info.umireon.sw_library.integraltest;
 
-import info.umireon.sw_library.EntityDate;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import info.umireon.sw_library.ControlUser;
+import info.umireon.sw_library.EntityUser;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
  * @author umireon
  */
-public class EntityDateUnitTest {
-    @Test
-    public void today() {
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-        String dateString = format.format(cal.getTime());
-
-        EntityDate date = new EntityDate();
-        assertEquals(dateString, date.toString());
+public class ControlUserIntegralTest {
+    private ControlUser ctrlUser;
+    
+    @Before
+    public void setup() {
+        ctrlUser = new ControlUser();
     }
     
     @Test
-    public void after() {
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DAY_OF_MONTH, 14);
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-        String dateString = format.format(cal.getTime());
-
-        EntityDate date = new EntityDate();
-        date = date.addDays(14);
-        assertEquals(dateString, date.toString());
+    public void ctrlHasZeroUserInitially() {
+        assertEquals(ctrlUser.getUsers().size(), 0);
+    }
+    
+    @Test
+    public void getUserNullForNonexistent() {
+        assertNull(ctrlUser.getUser("nonexistent"));
+    }
+    
+    @Test
+    public void getUser() {
+        EntityUser user = new EntityUser("user1");
+        ctrlUser.addUser(user);
+        assertEquals(ctrlUser.getUsers().size(), 1);
+        assertEquals(ctrlUser.getUser("user1"), user);
     }
 }

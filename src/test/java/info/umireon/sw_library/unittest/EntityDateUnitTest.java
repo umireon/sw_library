@@ -22,9 +22,11 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.unit;
+package info.umireon.sw_library.unittest;
 
-import info.umireon.sw_library.ReservedMaterialException;
+import info.umireon.sw_library.EntityDate;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -32,13 +34,26 @@ import static org.junit.Assert.*;
  *
  * @author umireon
  */
-public class ReservedMaterialExceptionUnitTest {
+public class EntityDateUnitTest {
     @Test
-    public void exception() {
-        try {
-            throw new ReservedMaterialException();
-        } catch (ReservedMaterialException e) {
-            assertNotNull(e);
-        }
+    public void today() {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        String dateString = format.format(cal.getTime());
+
+        EntityDate date = new EntityDate();
+        assertEquals(dateString, date.toString());
+    }
+    
+    @Test
+    public void after() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_MONTH, 14);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        String dateString = format.format(cal.getTime());
+
+        EntityDate date = new EntityDate();
+        date = date.addDays(14);
+        assertEquals(dateString, date.toString());
     }
 }

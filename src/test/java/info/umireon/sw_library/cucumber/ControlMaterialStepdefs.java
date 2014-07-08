@@ -37,9 +37,7 @@ import info.umireon.sw_library.EntityUser;
 import info.umireon.sw_library.ReservedMaterialException;
 import info.umireon.sw_library.UnavailableMaterialException;
 import java.util.HashMap;
-import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Before;
 
 /**
  *
@@ -47,7 +45,7 @@ import org.junit.Before;
  */
 public class ControlMaterialStepdefs {
     private ControlMaterial ctrlMaterial;
-    private HashMap<String, EntityUser> users = new HashMap<>();
+    private final HashMap<String, EntityUser> users = new HashMap<>();
 
     public EntityUser getUser(String name) {
         EntityUser user = users.get(name);

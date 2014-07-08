@@ -22,10 +22,10 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.unit;
+package info.umireon.sw_library.integraltest;
 
-import info.umireon.sw_library.EntityBook;
-import info.umireon.sw_library.EntityMaterial;
+import info.umireon.sw_library.EntityReservation;
+import info.umireon.sw_library.EntityUser;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -33,23 +33,12 @@ import static org.junit.Assert.*;
  *
  * @author umireon
  */
-public class EntityBookUnitTest {
+public class EntityReservationIntegralTest {
+    @Test
+    public void getReserver() {
+        EntityUser reserver = new EntityUser("reserver");
+        EntityReservation reserve = new EntityReservation(reserver);
+        assertEquals(reserver, reserve.getReserver());
+    }
     
-    @Test
-    public void nullname() {
-        EntityBook book = null;
-        try {
-            book = new EntityBook(null);
-        } catch (IllegalArgumentException e) {
-            assertNotNull(e);
-        }
-        assertNull(book);
-    }
-
-    @Test
-    public void name() {
-        EntityBook book;
-        book = new EntityBook("bookname");
-        assertEquals("bookname", book.getName());
-    }
 }

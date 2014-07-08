@@ -22,32 +22,43 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.unit;
+package info.umireon.sw_library.integraltest;
 
+import info.umireon.sw_library.EntityDate;
+import info.umireon.sw_library.EntityLoan;
 import info.umireon.sw_library.EntityUser;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
  * @author umireon
  */
-public class EntityUserUnitTest {
-    @Test
-    public void nullname() {
-        EntityUser user = null;
-        try {
-            user = new EntityUser(null);
-        } catch (IllegalArgumentException e) {
-            assertNotNull(e);
-        }
-        assertNull(user);
+public class EntityLoanIntegralTest {
+    private EntityLoan loan;
+    private EntityUser borrower;
+    private EntityDate due;
+    
+    @Before
+    public void setup() {
+        borrower = new EntityUser("borrower");
+        due = new EntityDate().addDays(14);
+        loan = new EntityLoan(borrower, due);
     }
-
+    
     @Test
-    public void name() {
-        EntityUser user;
-        user = new EntityUser("username");
-        assertEquals("username", user.getName());
+    public void getBorrower() {
+        assertEquals(borrower, loan.getBorrower());
+    }
+    
+    @Test
+    public void getDue() {
+        assertEquals(due, loan.getDue());
+    }
+    
+    @Test
+    public void toStr() {
+        assertTrue(loan.toString() instanceof String);
     }
 }

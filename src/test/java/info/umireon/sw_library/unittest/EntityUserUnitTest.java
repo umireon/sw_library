@@ -22,51 +22,32 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.integral;
+package info.umireon.sw_library.unittest;
 
-import info.umireon.sw_library.EntityBook;
-import info.umireon.sw_library.EntityLoan;
-import info.umireon.sw_library.EntityReservation;
+import info.umireon.sw_library.EntityUser;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Before;
 
 /**
  *
  * @author umireon
  */
-public class EntityBookIntegralTest {
-    private EntityBook book;
-    
-    @Before
-    public void setup() {
-        book = new EntityBook("book");
-    }
-    
+public class EntityUserUnitTest {
     @Test
-    public void statusInitiallyEmpty() {
-        assertNull(book.getStatus());
+    public void nullname() {
+        EntityUser user = null;
+        try {
+            user = new EntityUser(null);
+        } catch (IllegalArgumentException e) {
+            assertNotNull(e);
+        }
+        assertNull(user);
     }
-    
+
     @Test
-    public void statusInitiallyNotReserved() {
-        assertFalse(book.isReserved());
-    }
-    
-    @Test
-    public void setStatus() {
-        EntityLoan loan = new EntityLoan(null, null);
-        book.setStatus(loan);
-        assertEquals(loan, book.getStatus());
-    }
-    
-    @Test
-    public void reservation() {
-        EntityReservation reserve = new EntityReservation(null);
-        book.addReservation(reserve);
-        assertTrue(book.isReserved());
-        assertEquals(book.peekReservation(), reserve);
-        assertEquals(book.pollReservation(), reserve);
-        assertFalse(book.isReserved());
+    public void name() {
+        EntityUser user;
+        user = new EntityUser("username");
+        assertEquals("username", user.getName());
     }
 }

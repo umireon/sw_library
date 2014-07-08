@@ -22,9 +22,10 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.unit;
+package info.umireon.sw_library.unittest;
 
-import info.umireon.sw_library.UnknownMaterialException;
+import info.umireon.sw_library.EntityBook;
+import info.umireon.sw_library.EntityMaterial;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -32,13 +33,23 @@ import static org.junit.Assert.*;
  *
  * @author umireon
  */
-public class UnknownMaterialExceptionUnitTest {
+public class EntityBookUnitTest {
+    
     @Test
-    public void exception() {
+    public void nullname() {
+        EntityBook book = null;
         try {
-            throw new UnknownMaterialException();
-        } catch (UnknownMaterialException e) {
+            book = new EntityBook(null);
+        } catch (IllegalArgumentException e) {
             assertNotNull(e);
         }
+        assertNull(book);
+    }
+
+    @Test
+    public void name() {
+        EntityBook book;
+        book = new EntityBook("bookname");
+        assertEquals("bookname", book.getName());
     }
 }

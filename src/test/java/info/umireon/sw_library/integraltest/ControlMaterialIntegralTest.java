@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.integral;
+package info.umireon.sw_library.integraltest;
 
 import info.umireon.sw_library.ControlMaterial;
 import info.umireon.sw_library.EntityBook;

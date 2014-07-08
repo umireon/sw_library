@@ -83,7 +83,7 @@ public final class SwLibraryMain {
 
         user1 = new EntityUser("user1");
         user2 = new EntityUser("user2");
-        
+
         res1 = new EntityReservation(user1);
 
         book1 = new EntityBook("book1");
@@ -101,7 +101,7 @@ public final class SwLibraryMain {
         ctrlUser.addUser(user2);
         BoundaryLend boundLend = new BoundaryLend(ctrlMaterial, ctrlUser,
                 stdin, stdout);
-        
+
         boundLend.listen();
     }
 }

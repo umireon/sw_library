@@ -22,43 +22,23 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.integral;
+package info.umireon.sw_library.unittest;
 
-import info.umireon.sw_library.EntityDate;
-import info.umireon.sw_library.EntityLoan;
-import info.umireon.sw_library.EntityUser;
+import info.umireon.sw_library.UnavailableMaterialException;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Before;
 
 /**
  *
  * @author umireon
  */
-public class EntityLoanIntegralTest {
-    private EntityLoan loan;
-    private EntityUser borrower;
-    private EntityDate due;
-    
-    @Before
-    public void setup() {
-        borrower = new EntityUser("borrower");
-        due = new EntityDate().addDays(14);
-        loan = new EntityLoan(borrower, due);
-    }
-    
+public class UnavailableMaterialExceptionUnitTest {
     @Test
-    public void getBorrower() {
-        assertEquals(borrower, loan.getBorrower());
-    }
-    
-    @Test
-    public void getDue() {
-        assertEquals(due, loan.getDue());
-    }
-    
-    @Test
-    public void toStr() {
-        assertTrue(loan.toString() instanceof String);
+    public void exception() {
+        try {
+            throw new UnavailableMaterialException();
+        } catch (UnavailableMaterialException e) {
+            assertNotNull(e);
+        }
     }
 }

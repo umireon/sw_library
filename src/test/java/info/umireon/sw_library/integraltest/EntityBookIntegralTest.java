@@ -22,23 +22,51 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.unit;
+package info.umireon.sw_library.integraltest;
 
-import info.umireon.sw_library.UnavailableMaterialException;
+import info.umireon.sw_library.EntityBook;
+import info.umireon.sw_library.EntityLoan;
+import info.umireon.sw_library.EntityReservation;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
  * @author umireon
  */
-public class UnavailableMaterialExceptionUnitTest {
+public class EntityBookIntegralTest {
+    private EntityBook book;
+    
+    @Before
+    public void setup() {
+        book = new EntityBook("book");
+    }
+    
     @Test
-    public void exception() {
-        try {
-            throw new UnavailableMaterialException();
-        } catch (UnavailableMaterialException e) {
-            assertNotNull(e);
-        }
+    public void statusInitiallyEmpty() {
+        assertNull(book.getStatus());
+    }
+    
+    @Test
+    public void statusInitiallyNotReserved() {
+        assertFalse(book.isReserved());
+    }
+    
+    @Test
+    public void setStatus() {
+        EntityLoan loan = new EntityLoan(null, null);
+        book.setStatus(loan);
+        assertEquals(loan, book.getStatus());
+    }
+    
+    @Test
+    public void reservation() {
+        EntityReservation reserve = new EntityReservation(null);
+        book.addReservation(reserve);
+        assertTrue(book.isReserved());
+        assertEquals(book.peekReservation(), reserve);
+        assertEquals(book.pollReservation(), reserve);
+        assertFalse(book.isReserved());
     }
 }
