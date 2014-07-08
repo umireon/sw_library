@@ -22,47 +22,37 @@
  * THE SOFTWARE.
  */
 
-package info.umireon.sw_library.junit;
+package info.umireon.sw_library;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  *
  * @author umireon
  */
-public class NewEmptyJUnitTest {
-    
-    public NewEmptyJUnitTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Test
-    public void tテスト() {
-        //Assert.assertEquals("ああ", 0, 1);
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+public class EntityDate {
+    private final Calendar cal;
+
+    public EntityDate() {
+        cal = Calendar.getInstance();
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    private EntityDate(Calendar cal) {
+        this.cal = cal;
+    }
+
+    public EntityDate addDays(int days) {
+        Calendar newCal;
+        newCal = (Calendar) cal.clone();
+        newCal.add(Calendar.DAY_OF_MONTH, days);
+        return new EntityDate(newCal);
+    }
+
+    @Override
+    public String toString() {
+        DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        return format.format(cal.getTime());
+    }
 }
