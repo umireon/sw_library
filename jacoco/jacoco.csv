@@ -10,7 +10,7 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 図書館ドメインの実装,info.umireon.sw_library,EntityUser,0,15,0,2,0,6,0,3,0,2
 図書館ドメインの実装,info.umireon.sw_library,UnavailableMaterialException,0,3,0,0,0,1,0,1,0,1
 図書館ドメインの実装,info.umireon.sw_library,ControlMaterial,0,75,0,8,0,20,0,9,0,5
-図書館ドメインの実装,info.umireon.sw_library,EntityLoan,0,45,0,0,0,13,0,4,0,4
 図書館ドメインの実装,info.umireon.sw_library,EntityMaterial,0,54,0,4,0,16,0,10,0,8
+図書館ドメインの実装,info.umireon.sw_library,EntityLoan,0,45,0,0,0,13,0,4,0,4
 図書館ドメインの実装,info.umireon.sw_library,EntityReservation,0,9,0,0,0,4,0,2,0,2
 図書館ドメインの実装,info.umireon.sw_library,EntityBook,0,4,0,0,0,2,0,1,0,1
