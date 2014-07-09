@@ -31,6 +31,7 @@ import java.io.InputStream;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -68,6 +69,16 @@ public class SwLibraryMainClassSystemTest {
             SwLibraryMain.main(new String[0]);
         } catch (IllegalArgumentException e) {
         }
+        assertTrue(out.toString().contains("資料"));
+    }
+
+    @Test
+    public void normalOperation() throws IOException {
+        PrintWriter writer = new PrintWriter(in, true);
+        writer.println("user1");
+        writer.println("book1");
+
+        SwLibraryMain.main(new String[0]);
         assertTrue(out.toString().contains("資料"));
     }
 }
