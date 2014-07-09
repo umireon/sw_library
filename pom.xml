@@ -26,11 +26,6 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.tap4j</groupId>
-            <artifactId>tap4j-ext</artifactId>
-            <version>4.0.8</version>
-        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,17 +40,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.17</version>
-                <configuration>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>org.tap4j.ext.junit.listener.TapListenerMethod</value>
-                        </property>
-                    </properties>
-                    <systemPropertyVariables>
-                        <tap.junit.results>target/tap4j</tap.junit.results>
-                    </systemPropertyVariables>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
