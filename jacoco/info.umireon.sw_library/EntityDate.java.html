@@ -29,31 +29,50 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- *
- * @author umireon
+ * 日付を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public class EntityDate {
+    /**
+     * 日時です.
+     */
     private final Calendar cal;
 
-<span class="fc" id="L38">    public EntityDate() {</span>
-<span class="fc" id="L39">        cal = Calendar.getInstance();</span>
-<span class="fc" id="L40">    }</span>
+    /**
+     * 日時を今日として, 日付を作成します.
+     */
+<span class="fc" id="L44">    public EntityDate() {</span>
+<span class="fc" id="L45">        cal = Calendar.getInstance();</span>
+<span class="fc" id="L46">    }</span>
 
-<span class="fc" id="L42">    private EntityDate(Calendar cal) {</span>
-<span class="fc" id="L43">        this.cal = cal;</span>
-<span class="fc" id="L44">    }</span>
+    /**
+     * 日時を指定して, 日付を作成します.
+     * @param date 日時
+     */
+<span class="fc" id="L52">    private EntityDate(final Calendar date) {</span>
+<span class="fc" id="L53">        this.cal = date;</span>
+<span class="fc" id="L54">    }</span>
 
-    public EntityDate addDays(int days) {
+    /**
+     * 日時を指定された日数だけ進めた日付を作成します.
+     * @param days 進める日数
+     * @return 新しく作成された日付
+     */
+    public final EntityDate addDays(final int days) {
         Calendar newCal;
-<span class="fc" id="L48">        newCal = (Calendar) cal.clone();</span>
-<span class="fc" id="L49">        newCal.add(Calendar.DAY_OF_MONTH, days);</span>
-<span class="fc" id="L50">        return new EntityDate(newCal);</span>
+<span class="fc" id="L63">        newCal = (Calendar) cal.clone();</span>
+<span class="fc" id="L64">        newCal.add(Calendar.DAY_OF_MONTH, days);</span>
+<span class="fc" id="L65">        return new EntityDate(newCal);</span>
     }
 
+    /**
+     * 日付の文字列表現を作成します.
+     * @return 日付の文字列表現
+     */
     @Override
-    public String toString() {
-<span class="fc" id="L55">        DateFormat format = new SimpleDateFormat(&quot;yyyy/MM/dd&quot;);</span>
-<span class="fc" id="L56">        return format.format(cal.getTime());</span>
+    public final String toString() {
+<span class="fc" id="L74">        DateFormat format = new SimpleDateFormat(&quot;yyyy/MM/dd&quot;);</span>
+<span class="fc" id="L75">        return format.format(cal.getTime());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

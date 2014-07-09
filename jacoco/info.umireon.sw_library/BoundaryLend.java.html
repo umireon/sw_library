@@ -32,90 +32,141 @@ import java.io.PrintStream;
 
 
 /**
- *
- * @author umireon
+ * 貸出処理画面を表すバウンダリです.
+ * @author Kaito Udagawa
  */
 public class BoundaryLend {
+    /**
+     * 資料管理です.
+     */
     private final ControlMaterial ctrlMaterial;
+
+    /**
+     * 利用者管理です.
+     */
     private final ControlUser ctrlUser;
+
+    /**
+     * 標準入力です.
+     */
     private final InputStream stdin;
+
+    /**
+     * 標準出力です.
+     */
     private final PrintStream stdout;
 
-    public BoundaryLend(final ControlMaterial ctrlMaterial,
-            final ControlUser ctrlUser,
-<span class="fc" id="L46">            final InputStream stdin, final PrintStream stdout) {</span>
-<span class="fc" id="L47">        this.ctrlMaterial = ctrlMaterial;</span>
-<span class="fc" id="L48">        this.ctrlUser = ctrlUser;</span>
-<span class="fc" id="L49">        this.stdin = stdin;</span>
-<span class="fc" id="L50">        this.stdout = stdout;</span>
-<span class="fc" id="L51">    }</span>
+    /**
+     * 貸出処理画面を作成します.
+     * @param controlMaterial 資料管理
+     * @param controlUser 利用者管理
+     * @param sin 標準入力
+     * @param sout 標準出力
+     */
+    public BoundaryLend(final ControlMaterial controlMaterial,
+            final ControlUser controlUser,
+<span class="fc" id="L68">            final InputStream sin, final PrintStream sout) {</span>
+<span class="fc" id="L69">        ctrlMaterial = controlMaterial;</span>
+<span class="fc" id="L70">        ctrlUser = controlUser;</span>
+<span class="fc" id="L71">        stdin = sin;</span>
+<span class="fc" id="L72">        stdout = sout;</span>
+<span class="fc" id="L73">    }</span>
 
-    public void listen() {
-<span class="fc" id="L54">        stdout.println(&quot;資料貸出システム (v0.0.1)&quot;);</span>
-<span class="fc" id="L55">        InputStreamReader isr = new InputStreamReader(stdin);</span>
-<span class="fc" id="L56">        BufferedReader br = new BufferedReader(isr);</span>
-        
-<span class="fc" id="L58">        indexMaterials();</span>
-<span class="fc" id="L59">        indexUsers();</span>
-
+    /**
+     * ユーザからの入力を待ちます.
+     * @throws IOException 入出力エラーが発生した場合
+     */
+    public final void listen() throws IOException {
+<span class="fc" id="L80">        InputStreamReader isr = null;</span>
+<span class="fc" id="L81">        BufferedReader br = null;</span>
         try {
-<span class="fc" id="L62">            stdout.print(&quot;貸出者氏名&gt; &quot;);</span>
-<span class="fc" id="L63">            String borrowerName = br.readLine();</span>
-<span class="pc bpc" id="L64" title="1 of 2 branches missed.">            if (borrowerName == null) System.exit(0);</span>
-<span class="fc" id="L65">            EntityUser borrower = ctrlUser.getUser(borrowerName);</span>
-<span class="fc bfc" id="L66" title="All 2 branches covered.">            if (borrower == null) {</span>
-<span class="fc" id="L67">                ctrlUser.addUser(new EntityUser(borrowerName));</span>
-<span class="fc" id="L68">                borrower = ctrlUser.getUser(borrowerName);</span>
-<span class="fc" id="L69">                noticeUserRegistration(borrower);</span>
+<span class="fc" id="L83">            isr = new InputStreamReader(stdin);</span>
+<span class="fc" id="L84">            br = new BufferedReader(isr);</span>
+
+<span class="fc" id="L86">            stdout.println(&quot;資料貸出システム (v0.0.1)&quot;);</span>
+<span class="fc" id="L87">            indexMaterials();</span>
+<span class="fc" id="L88">            indexUsers();</span>
+
+<span class="fc" id="L90">            stdout.print(&quot;貸出者氏名&gt; &quot;);</span>
+<span class="fc" id="L91">            String borrowerName = br.readLine();</span>
+
+<span class="pc bpc" id="L93" title="1 of 2 branches missed.">            if (borrowerName == null) {</span>
+                return;
             }
 
-<span class="fc" id="L72">            stdout.print(&quot;貸出資料名&gt; &quot;);</span>
-<span class="fc" id="L73">            String materialName = br.readLine();</span>
-<span class="pc bpc" id="L74" title="1 of 2 branches missed.">            if (materialName == null) return;</span>
-<span class="fc" id="L75">            ctrlMaterial.lendMaterial(materialName, borrower);</span>
-<span class="fc" id="L76">            indexMaterials();</span>
-<span class="nc" id="L77">        } catch (IOException e) {</span>
-<span class="nc" id="L78">            e.printStackTrace();</span>
-<span class="fc" id="L79">        } catch (UnknownMaterialException e) {</span>
-<span class="fc" id="L80">            stdout.println(&quot;指定された資料は存在しません&quot;);</span>
-<span class="fc" id="L81">        } catch (UnavailableMaterialException e) {</span>
-<span class="fc" id="L82">            stdout.println(&quot;指定された資料は貸出できません&quot;);</span>
-<span class="fc" id="L83">        } catch (ReservedMaterialException e) {</span>
-<span class="fc" id="L84">            stdout.println(&quot;指定された資料は予約されています&quot;);</span>
-<span class="pc" id="L85">        }</span>
-<span class="fc" id="L86">    }</span>
-    
+<span class="fc" id="L97">            EntityUser borrower = ctrlUser.getUser(borrowerName);</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">            if (borrower == null) {</span>
+<span class="fc" id="L99">                ctrlUser.addUser(new EntityUser(borrowerName));</span>
+<span class="fc" id="L100">                borrower = ctrlUser.getUser(borrowerName);</span>
+<span class="fc" id="L101">                noticeUserRegistration(borrower);</span>
+            }
+
+<span class="fc" id="L104">            stdout.print(&quot;貸出資料名&gt; &quot;);</span>
+<span class="fc" id="L105">            String materialName = br.readLine();</span>
+
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">            if (materialName == null) {</span>
+                return;
+            }
+
+<span class="fc" id="L111">            ctrlMaterial.lendMaterial(materialName, borrower);</span>
+<span class="fc" id="L112">            indexMaterials();</span>
+<span class="fc" id="L113">        } catch (UnknownMaterialException e) {</span>
+<span class="fc" id="L114">            stdout.println(&quot;指定された資料は存在しません&quot;);</span>
+<span class="fc" id="L115">        } catch (UnavailableMaterialException e) {</span>
+<span class="fc" id="L116">            stdout.println(&quot;指定された資料は貸出できません&quot;);</span>
+<span class="fc" id="L117">        } catch (ReservedMaterialException e) {</span>
+<span class="fc" id="L118">            stdout.println(&quot;指定された資料は予約されています&quot;);</span>
+        } finally {
+<span class="pc bpc" id="L120" title="10 of 14 branches missed.">            if (br != null) {</span>
+<span class="pc" id="L121">                br.close();</span>
+            }
+<span class="pc bpc" id="L123" title="10 of 14 branches missed.">            if (isr != null) {</span>
+<span class="pc" id="L124">                isr.close();</span>
+            }
+        }
+<span class="fc" id="L127">    }</span>
+
+    /**
+     * 資料一覧を表示します.
+     */
     private void indexMaterials() {
-<span class="fc" id="L89">        stdout.println(&quot;資料一覧:&quot;);</span>
-<span class="fc bfc" id="L90" title="All 2 branches covered.">        for (EntityMaterial material : ctrlMaterial.getMaterials()) {</span>
-<span class="fc" id="L91">            StringBuilder str = new StringBuilder();</span>
-<span class="fc" id="L92">            str.append(&quot;  - &quot;);</span>
-<span class="fc" id="L93">            str.append(material.getName());</span>
-<span class="fc bfc" id="L94" title="All 2 branches covered.">            if (material.getStatus() != null) {</span>
-<span class="fc" id="L95">                str.append(&quot; &quot;);</span>
-<span class="fc" id="L96">                str.append(material.getStatus().toString());</span>
+<span class="fc" id="L133">        stdout.println(&quot;資料一覧:&quot;);</span>
+<span class="fc bfc" id="L134" title="All 2 branches covered.">        for (EntityMaterial material : ctrlMaterial.getMaterials()) {</span>
+<span class="fc" id="L135">            StringBuilder str = new StringBuilder();</span>
+<span class="fc" id="L136">            str.append(&quot;  - &quot;);</span>
+<span class="fc" id="L137">            str.append(material.getName());</span>
+<span class="fc bfc" id="L138" title="All 2 branches covered.">            if (material.getStatus() != null) {</span>
+<span class="fc" id="L139">                str.append(&quot; &quot;);</span>
+<span class="fc" id="L140">                str.append(material.getStatus().toString());</span>
             }
-<span class="fc bfc" id="L98" title="All 2 branches covered.">            if (material.isReserved()) {</span>
-<span class="fc" id="L99">                str.append(&quot; 予約(&quot;);</span>
-<span class="fc" id="L100">                str.append(material.peekReservation().getReserver().getName());</span>
-<span class="fc" id="L101">                str.append(&quot;)&quot;);</span>
+<span class="fc bfc" id="L142" title="All 2 branches covered.">            if (material.isReserved()) {</span>
+<span class="fc" id="L143">                str.append(&quot; 予約(&quot;);</span>
+<span class="fc" id="L144">                str.append(material.peekReservation().getReserver().getName());</span>
+<span class="fc" id="L145">                str.append(&quot;)&quot;);</span>
             }
-<span class="fc" id="L103">            stdout.println(str.toString());</span>
-<span class="fc" id="L104">        }</span>
-<span class="fc" id="L105">    }</span>
-    
+<span class="fc" id="L147">            stdout.println(str.toString());</span>
+<span class="fc" id="L148">        }</span>
+<span class="fc" id="L149">    }</span>
+
+    /**
+     * 利用者一覧を表示します.
+     */
     private void indexUsers() {
-<span class="fc" id="L108">        stdout.println(&quot;利用者一覧:&quot;);</span>
-<span class="fc bfc" id="L109" title="All 2 branches covered.">        for (EntityUser user : ctrlUser.getUsers()) {</span>
-<span class="fc" id="L110">            StringBuilder str = new StringBuilder();</span>
-<span class="fc" id="L111">            str.append(&quot;  - &quot;);</span>
-<span class="fc" id="L112">            str.append(user.getName());</span>
-<span class="fc" id="L113">            stdout.println(str.toString());</span>
-<span class="fc" id="L114">        }</span>
-<span class="fc" id="L115">    }</span>
-    
-    private void noticeUserRegistration(EntityUser registered) {
-<span class="fc" id="L118">        stdout.println(&quot;次のユーザが登録されました: &quot; + registered.getName());</span>
-<span class="fc" id="L119">    }</span>
+<span class="fc" id="L155">        stdout.println(&quot;利用者一覧:&quot;);</span>
+<span class="fc bfc" id="L156" title="All 2 branches covered.">        for (EntityUser user : ctrlUser.getUsers()) {</span>
+<span class="fc" id="L157">            StringBuilder str = new StringBuilder();</span>
+<span class="fc" id="L158">            str.append(&quot;  - &quot;);</span>
+<span class="fc" id="L159">            str.append(user.getName());</span>
+<span class="fc" id="L160">            stdout.println(str.toString());</span>
+<span class="fc" id="L161">        }</span>
+<span class="fc" id="L162">    }</span>
+
+    /**
+     * ユーザが新しく登録されたことを通知します.
+     * @param registered 新しく登録されたユーザ
+     */
+    private void noticeUserRegistration(final EntityUser registered) {
+<span class="fc" id="L169">        stdout.println(&quot;次のユーザが登録されました: &quot; + registered.getName());</span>
+<span class="fc" id="L170">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

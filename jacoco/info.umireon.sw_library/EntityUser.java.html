@@ -25,22 +25,33 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 利用者を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public class EntityUser {
+    /**
+     * 利用者の名前です.
+     */
     private final String name;
 
-<span class="fc" id="L34">    public EntityUser(String name) {</span>
-<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (name == null) {</span>
-<span class="fc" id="L36">            throw new IllegalArgumentException();</span>
+    /**
+     * 利用者を作成します.
+     * @param username 利用者の名前
+     */
+<span class="fc" id="L41">    public EntityUser(final String username) {</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (username == null) {</span>
+<span class="fc" id="L43">            throw new IllegalArgumentException();</span>
         }
 
-<span class="fc" id="L39">        this.name = name;</span>
-<span class="fc" id="L40">    }</span>
+<span class="fc" id="L46">        name = username;</span>
+<span class="fc" id="L47">    }</span>
 
-    public String getName() {
-<span class="fc" id="L43">        return name;</span>
+    /**
+     * 利用者の名前を取得します.
+     * @return 利用者の名前
+     */
+    public final String getName() {
+<span class="fc" id="L54">        return name;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

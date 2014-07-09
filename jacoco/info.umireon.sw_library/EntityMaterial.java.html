@@ -25,55 +25,95 @@
 package info.umireon.sw_library;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
 import java.util.Queue;
 
 /**
- *
- * @author umireon
+ * 資料を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public abstract class EntityMaterial {
+    /**
+     * 資料の名前です.
+     */
     private final String name;
-<span class="fc" id="L39">    private EntityStatus status = null;</span>
+
+    /**
+     * 資料の現況です.
+     */
+<span class="fc" id="L43">    private EntityStatus status = null;</span>
+
+    /**
+     * 資料の予約のキューです.
+     */
     private final Queue&lt;EntityReservation&gt; reservations;
 
-<span class="fc" id="L42">    public EntityMaterial(final String name) {</span>
-<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (name == null) {</span>
-<span class="fc" id="L44">            throw new IllegalArgumentException();</span>
+    /**
+     * 資料を作成します.
+     * @param materialName 資料の名前
+     */
+<span class="fc" id="L54">    public EntityMaterial(final String materialName) {</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (materialName == null) {</span>
+<span class="fc" id="L56">            throw new IllegalArgumentException();</span>
         }
 
-<span class="fc" id="L47">        this.name = name;</span>
-<span class="fc" id="L48">        this.reservations = new ArrayDeque&lt;&gt;();</span>
-<span class="fc" id="L49">    }</span>
-
-    public String getName() {
-<span class="fc" id="L52">        return name;</span>
-    }
-    
-    public EntityStatus getStatus() {
-<span class="fc" id="L56">        return status;</span>
-    }
-
-    public void setStatus(EntityStatus status) {
-<span class="fc" id="L60">        this.status = status;</span>
+<span class="fc" id="L59">        name = materialName;</span>
+<span class="fc" id="L60">        reservations = new ArrayDeque&lt;&gt;();</span>
 <span class="fc" id="L61">    }</span>
 
-    public void addReservation(EntityReservation reservation) {
-<span class="fc" id="L64">        reservations.add(reservation);</span>
-<span class="fc" id="L65">    }</span>
-
-    public EntityReservation peekReservation() {
-<span class="fc" id="L68">        return reservations.peek();</span>
+    /**
+     * 資料の名前を取得します.
+     * @return 資料の名前
+     */
+    public final String getName() {
+<span class="fc" id="L68">        return name;</span>
     }
 
-    public EntityReservation pollReservation() {
-<span class="fc" id="L72">        return reservations.poll();</span>
+    /**
+     * 資料の現況を取得します.
+     * @return 資料の現況
+     */
+    public final EntityStatus getStatus() {
+<span class="fc" id="L76">        return status;</span>
     }
-    
-    public boolean isReserved() {
-<span class="fc bfc" id="L76" title="All 2 branches covered.">        return !reservations.isEmpty();</span>
+
+    /**
+     * 資料の現況を設定します.
+     * @param newStatus 新しく設定される資料の現況
+     */
+    public final void setStatus(final EntityStatus newStatus) {
+<span class="fc" id="L84">        this.status = newStatus;</span>
+<span class="fc" id="L85">    }</span>
+
+    /**
+     * 資料の予約をキューの最後に追加します.
+     * @param newReservation 新しく追加される予約
+     */
+    public final void addReservation(final EntityReservation newReservation) {
+<span class="fc" id="L92">        reservations.add(newReservation);</span>
+<span class="fc" id="L93">    }</span>
+
+    /**
+     * 資料の予約のキューの先頭を取得します.
+     * @return 資料の先頭の予約
+     */
+    public final EntityReservation peekReservation() {
+<span class="fc" id="L100">        return reservations.peek();</span>
+    }
+
+    /**
+     * 資料の予約のキューの先頭を取得し，その予約を削除します.
+     * @return 資料の先頭の予約
+     */
+    public final EntityReservation pollReservation() {
+<span class="fc" id="L108">        return reservations.poll();</span>
+    }
+
+    /**
+     * 資料の予約が1件以上あれば，真を返します.
+     * @return 資料の予約が1件以上あれば真，さもなくば偽
+     */
+    public final boolean isReserved() {
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        return !reservations.isEmpty();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

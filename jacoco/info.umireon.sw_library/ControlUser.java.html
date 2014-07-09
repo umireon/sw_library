@@ -29,26 +29,45 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author umireon
+ * 利用者を管理するコントロールです.
+ * @author Kaito Udagawa
  */
 public class ControlUser {
-    public Map&lt;String, EntityUser&gt; users;
+    /**
+     * 利用者一覧です.
+     */
+    private final Map&lt;String, EntityUser&gt; users;
 
-<span class="fc" id="L38">    public ControlUser() {</span>
-<span class="fc" id="L39">        users = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L40">    }</span>
+    /**
+     * 空の利用者管理を作成します.
+     */
+<span class="fc" id="L44">    public ControlUser() {</span>
+<span class="fc" id="L45">        users = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L46">    }</span>
 
-    public Collection&lt;EntityUser&gt; getUsers() {
-<span class="fc" id="L43">        return users.values();</span>
+    /**
+     * 利用者一覧を取得します.
+     * @return 利用者一覧
+     */
+    public final Collection&lt;EntityUser&gt; getUsers() {
+<span class="fc" id="L53">        return users.values();</span>
     }
-    
-    public EntityUser getUser(String name) {
-<span class="fc" id="L47">        return users.get(name);</span>
+
+    /**
+     * 利用者名から, 利用者を取得します.
+     * @param name 利用者名
+     * @return 利用者名に対応する利用者, 存在しない場合は &lt;code&gt;null&lt;/code&gt;
+     */
+    public final EntityUser getUser(final String name) {
+<span class="fc" id="L62">        return users.get(name);</span>
     }
-    
-    public void addUser(EntityUser user) {
-<span class="fc" id="L51">        users.put(user.getName(), user);</span>
-<span class="fc" id="L52">    }</span>
+
+    /**
+     * 利用者を追加します.
+     * @param user 追加する利用者
+     */
+    public final void addUser(final EntityUser user) {
+<span class="fc" id="L70">        users.put(user.getName(), user);</span>
+<span class="fc" id="L71">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
