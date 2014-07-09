@@ -33,7 +33,6 @@ import java.io.PrintStream;
  * @author Kaito Udagawa
  */
 public final class SwLibraryMain {
-
     /**
      * 図書館ドメインの実装のエントリポイントです.
      * @param args the command line arguments

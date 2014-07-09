@@ -77,22 +77,16 @@ public class BoundaryLend {
      * @throws IOException 入出力エラーが発生した場合
      */
     public final void listen() throws IOException {
-        InputStreamReader isr = null;
-        BufferedReader br = null;
         try {
-            isr = new InputStreamReader(stdin);
-            br = new BufferedReader(isr);
+            InputStreamReader isr = new InputStreamReader(stdin);
+            BufferedReader br = new BufferedReader(isr);
 
-            stdout.println("資料貸出システム (v0.0.1)");
+            stdout.println("資料貸出システム (v1.0.1)");
             indexMaterials();
             indexUsers();
 
             stdout.print("貸出者氏名> ");
             String borrowerName = br.readLine();
-
-            if (borrowerName == null) {
-                return;
-            }
 
             EntityUser borrower = ctrlUser.getUser(borrowerName);
             if (borrower == null) {
@@ -104,10 +98,6 @@ public class BoundaryLend {
             stdout.print("貸出資料名> ");
             String materialName = br.readLine();
 
-            if (materialName == null) {
-                return;
-            }
-
             ctrlMaterial.lendMaterial(materialName, borrower);
             indexMaterials();
         } catch (UnknownMaterialException e) {
@@ -116,13 +106,6 @@ public class BoundaryLend {
             stdout.println("指定された資料は貸出できません");
         } catch (ReservedMaterialException e) {
             stdout.println("指定された資料は予約されています");
-        } finally {
-            if (br != null) {
-                br.close();
-            }
-            if (isr != null) {
-                isr.close();
-            }
         }
     }
 
