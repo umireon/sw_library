@@ -25,13 +25,9 @@
 package info.umireon.sw_library.systemtest;
 
 import info.umireon.sw_library.SwLibraryMain;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintStream;
@@ -44,18 +40,20 @@ import org.junit.Before;
  *
  * @author umireon
  */
-public class SwLibraryMainTest {
+public class SwLibraryMainSystemTest {
     private SwLibraryMain main;
-    private final PipedOutputStream in = new PipedOutputStream();
-    private final ByteArrayOutputStream out = new ByteArrayOutputStream();
+    private PipedOutputStream in;
+    private ByteArrayOutputStream out;
 
     @Before
     public void setup() throws IOException {
+        in = new PipedOutputStream();
+        out = new ByteArrayOutputStream();
         PipedInputStream stdin = new PipedInputStream(in);
         PrintStream stdout = new PrintStream(out);
         main = new SwLibraryMain(stdin, stdout);
     }
-    
+
     @Test
     public void 貸出可能() throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
