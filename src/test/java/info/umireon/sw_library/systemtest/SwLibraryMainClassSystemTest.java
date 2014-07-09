@@ -64,7 +64,10 @@ public class SwLibraryMainClassSystemTest {
     @Test
     public void closedStdin() throws IOException {
         in.close();
-        SwLibraryMain.main(new String[0]);
+        try {
+            SwLibraryMain.main(new String[0]);
+        } catch (IllegalArgumentException e) {
+        }
         assertTrue(out.toString().contains("資料"));
     }
 }
