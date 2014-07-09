@@ -27,17 +27,17 @@ package info.umireon.sw_library;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.logging.Logger;
 
 /**
- *
- * @author umireon
+ * 図書館ドメインの実装のメインクラスです.
+ * @author Kaito Udagawa
  */
 public final class SwLibraryMain {
 
     /**
+     * 図書館ドメインの実装のエントリポイントです.
      * @param args the command line arguments
-     * @throws java.io.IOException 入出力エラー
+     * @throws java.io.IOException 入出力エラーが発生した場合
      */
     public static void main(final String[] args) throws IOException {
         SwLibraryMain main;
@@ -46,22 +46,17 @@ public final class SwLibraryMain {
     }
 
     /**
-     * ロガー.
-     */
-    public static final Logger LOGGER = Logger.getGlobal();
-
-    /**
-     * 標準入力.
+     * 標準入力です.
      */
     private final transient InputStream stdin;
 
     /**
-     * 標準出力.
+     * 標準出力です.
      */
     private final transient PrintStream stdout;
 
     /**
-     * 標準入出力とともに，インスタンスを生成する.
+     * 図書館ドメインの実装のインスタンスを作成します.
      * @param sin 標準入力
      * @param sout 標準出力
      */
@@ -71,9 +66,9 @@ public final class SwLibraryMain {
     }
 
     /**
-     * アプリケーションを開始する.
+     * 図書館ドメインの実装を開始します.
      * @param args 引数
-     * @throws IOException 標準入力が読めない
+     * @throws IOException 入出力エラーが発生した場合
      */
     public void start(final String[] args) throws IOException {
         EntityBook book1, book2;

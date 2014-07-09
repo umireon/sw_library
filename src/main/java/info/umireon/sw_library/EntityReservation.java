@@ -25,17 +25,28 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 資料の予約を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public class EntityReservation {
+    /**
+     * 予約した利用者.
+     */
     private final EntityUser reserver;
 
-    public EntityReservation(EntityUser reserver) {
-        this.reserver = reserver;
+    /**
+     * 予約を作成します.
+     * @param reserveUser 予約した利用者
+     */
+    public EntityReservation(final EntityUser reserveUser) {
+        reserver = reserveUser;
     }
 
-    public EntityUser getReserver() {
+    /**
+     * 予約した利用者を取得します.
+     * @return 予約した利用者
+     */
+    public final EntityUser getReserver() {
         return reserver;
     }
 }

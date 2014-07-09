@@ -25,28 +25,52 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 貸出を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public class EntityLoan extends EntityStatus {
+    /**
+     * 貸出している利用者です.
+     */
     private final EntityUser borrower;
+
+    /**
+     * 貸出の期限です.
+     */
     private final EntityDate due;
 
-    public EntityLoan(EntityUser borrower, EntityDate due) {
-        this.borrower = borrower;
-        this.due = due;
+    /**
+     * 貸出を作成します.
+     * @param borrowUser 貸出している利用者
+     * @param loanDue 貸出の期限
+     */
+    public EntityLoan(final EntityUser borrowUser, final EntityDate loanDue) {
+        borrower = borrowUser;
+        due = loanDue;
     }
 
-    public EntityUser getBorrower() {
+    /**
+     * 貸出している利用者を取得します.
+     * @return 貸出している利用者
+     */
+    public final EntityUser getBorrower() {
         return borrower;
     }
 
-    public EntityDate getDue() {
+    /**
+     * 貸出の期限を取得します.
+     * @return 貸出の期限
+     */
+    public final EntityDate getDue() {
         return due;
     }
 
+    /**
+     * 貸出の文字列表現を作成します.
+     * @return 貸出の文字列表現
+     */
     @Override
-    public String toString() {
+    public final String toString() {
         StringBuilder str = new StringBuilder();
         str.append("貸出中(");
         str.append(borrower.getName());

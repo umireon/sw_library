@@ -25,8 +25,8 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 資料が利用可能ではないことを示す例外です.
+ * @author Kaito Udagawa
  */
 public class UnavailableMaterialException extends Exception {
 }

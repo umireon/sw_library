@@ -29,33 +29,63 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author umireon
+ * 資料を管理するコントロールです.
+ * @author Kaito Udagawa
  */
 public class ControlMaterial {
+    /**
+     * 貸出可能日数です.
+     */
     public static final int DUE_DAYS = 14;
 
-    public Map<String, EntityMaterial> materials;
+    /**
+     * 資料の一覧です.
+     */
+    private final Map<String, EntityMaterial> materials;
 
+    /**
+     * 空の資料管理を作成します.
+     */
     public ControlMaterial() {
         materials = new HashMap<>();
     }
 
-    public Collection<EntityMaterial> getMaterials() {
+    /**
+     * 資料一覧を取得します.
+     * @return 資料一覧itirann
+     */
+    public final Collection<EntityMaterial> getMaterials() {
         return materials.values();
     }
 
-    public EntityMaterial getMaterial(String name) {
+    /**
+     * 資料名から, 資料を取得します.
+     * @param name 資料名
+     * @return 利用者名に対応する利用者, 存在しない場合は <code>null</code>
+     */
+    public final EntityMaterial getMaterial(final String name) {
         return materials.get(name);
     }
 
-    public void addMaterial(EntityMaterial material) {
+    /**
+     * 資料を追加します.
+     * @param material 追加する資料
+     */
+    public final void addMaterial(final EntityMaterial material) {
         materials.put(material.getName(), material);
     }
 
-    public void lendMaterial(String materialName, EntityUser borrower)
-            throws UnknownMaterialException, UnavailableMaterialException,
-            ReservedMaterialException {
+    /**
+     * 資料を貸出します.
+     * @param materialName 資料名
+     * @param borrower 貸出する利用者
+     * @throws UnknownMaterialException 資料が存在しない場合
+     * @throws UnavailableMaterialException 資料が利用可能ではない場合
+     * @throws ReservedMaterialException 資料が予約されていて, 利用可能ではない場合
+     */
+    public final void lendMaterial(final String materialName,
+            final EntityUser borrower) throws UnknownMaterialException,
+            UnavailableMaterialException, ReservedMaterialException {
         EntityMaterial material;
         material = getMaterial(materialName);
         if (material == null) {

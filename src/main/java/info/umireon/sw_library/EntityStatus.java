@@ -25,8 +25,8 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 資料の現況を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public abstract class EntityStatus {
 }

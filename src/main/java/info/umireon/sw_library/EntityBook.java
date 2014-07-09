@@ -25,11 +25,15 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 書籍を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public class EntityBook extends EntityMaterial {
-    public EntityBook(String name) {
-        super(name);
+    /**
+     * 書籍を作成します.
+     * @param bookName 書籍の名前
+     */
+    public EntityBook(final String bookName) {
+        super(bookName);
     }
 }
