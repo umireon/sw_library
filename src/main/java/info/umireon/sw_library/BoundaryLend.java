@@ -90,7 +90,7 @@ public class BoundaryLend {
             stdout.print("貸出者氏名> ");
             String borrowerName = br.readLine();
 
-            if (borrowerName != null) {
+            if (borrowerName == null) {
                 return;
             }
 
