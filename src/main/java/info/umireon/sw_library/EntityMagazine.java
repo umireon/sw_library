@@ -25,11 +25,15 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 雑誌を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public class EntityMagazine extends EntityMaterial {
-    public EntityMagazine(String name) {
-        super(name);
+    /**
+     * 雑誌を作成します.
+     * @param magazineName 雑誌の名前
+     */
+    public EntityMagazine(final String magazineName) {
+        super(magazineName);
     }
 }

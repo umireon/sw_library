@@ -29,25 +29,44 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author umireon
+ * 利用者を管理するコントロールです.
+ * @author Kaito Udagawa
  */
 public class ControlUser {
-    public Map<String, EntityUser> users;
+    /**
+     * 利用者一覧です.
+     */
+    private final Map<String, EntityUser> users;
 
+    /**
+     * 空の利用者管理を作成します.
+     */
     public ControlUser() {
         users = new HashMap<>();
     }
 
-    public Collection<EntityUser> getUsers() {
+    /**
+     * 利用者一覧を取得します.
+     * @return 利用者一覧
+     */
+    public final Collection<EntityUser> getUsers() {
         return users.values();
     }
-    
-    public EntityUser getUser(String name) {
+
+    /**
+     * 利用者名から, 利用者を取得します.
+     * @param name 利用者名
+     * @return 利用者名に対応する利用者, 存在しない場合は <code>null</code>
+     */
+    public final EntityUser getUser(final String name) {
         return users.get(name);
     }
-    
-    public void addUser(EntityUser user) {
+
+    /**
+     * 利用者を追加します.
+     * @param user 追加する利用者
+     */
+    public final void addUser(final EntityUser user) {
         users.put(user.getName(), user);
     }
 }

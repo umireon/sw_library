@@ -25,54 +25,94 @@
 package info.umireon.sw_library;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
 import java.util.Queue;
 
 /**
- *
- * @author umireon
+ * 資料を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public abstract class EntityMaterial {
+    /**
+     * 資料の名前です.
+     */
     private final String name;
+
+    /**
+     * 資料の現況です.
+     */
     private EntityStatus status = null;
+
+    /**
+     * 資料の予約のキューです.
+     */
     private final Queue<EntityReservation> reservations;
 
-    public EntityMaterial(final String name) {
-        if (name == null) {
+    /**
+     * 資料を作成します.
+     * @param materialName 資料の名前
+     */
+    public EntityMaterial(final String materialName) {
+        if (materialName == null) {
             throw new IllegalArgumentException();
         }
 
-        this.name = name;
-        this.reservations = new ArrayDeque<>();
+        name = materialName;
+        reservations = new ArrayDeque<>();
     }
 
-    public String getName() {
+    /**
+     * 資料の名前を取得します.
+     * @return 資料の名前
+     */
+    public final String getName() {
         return name;
     }
-    
-    public EntityStatus getStatus() {
+
+    /**
+     * 資料の現況を取得します.
+     * @return 資料の現況
+     */
+    public final EntityStatus getStatus() {
         return status;
     }
 
-    public void setStatus(EntityStatus status) {
-        this.status = status;
+    /**
+     * 資料の現況を設定します.
+     * @param newStatus 新しく設定される資料の現況
+     */
+    public final void setStatus(final EntityStatus newStatus) {
+        this.status = newStatus;
     }
 
-    public void addReservation(EntityReservation reservation) {
-        reservations.add(reservation);
+    /**
+     * 資料の予約をキューの最後に追加します.
+     * @param newReservation 新しく追加される予約
+     */
+    public final void addReservation(final EntityReservation newReservation) {
+        reservations.add(newReservation);
     }
 
-    public EntityReservation peekReservation() {
+    /**
+     * 資料の予約のキューの先頭を取得します.
+     * @return 資料の先頭の予約
+     */
+    public final EntityReservation peekReservation() {
         return reservations.peek();
     }
 
-    public EntityReservation pollReservation() {
+    /**
+     * 資料の予約のキューの先頭を取得し，その予約を削除します.
+     * @return 資料の先頭の予約
+     */
+    public final EntityReservation pollReservation() {
         return reservations.poll();
     }
-    
-    public boolean isReserved() {
+
+    /**
+     * 資料の予約が1件以上あれば，真を返します.
+     * @return 資料の予約が1件以上あれば真，さもなくば偽
+     */
+    public final boolean isReserved() {
         return !reservations.isEmpty();
     }
 }

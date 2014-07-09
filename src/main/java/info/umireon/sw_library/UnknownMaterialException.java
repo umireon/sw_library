@@ -25,8 +25,8 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 資料が存在しないことを示す例外です.
+ * @author Kaito Udagawa
  */
 public class UnknownMaterialException extends Exception {
 }

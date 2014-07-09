@@ -25,21 +25,32 @@
 package info.umireon.sw_library;
 
 /**
- *
- * @author umireon
+ * 利用者を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public class EntityUser {
+    /**
+     * 利用者の名前です.
+     */
     private final String name;
 
-    public EntityUser(String name) {
-        if (name == null) {
+    /**
+     * 利用者を作成します.
+     * @param username 利用者の名前
+     */
+    public EntityUser(final String username) {
+        if (username == null) {
             throw new IllegalArgumentException();
         }
 
-        this.name = name;
+        name = username;
     }
 
-    public String getName() {
+    /**
+     * 利用者の名前を取得します.
+     * @return 利用者の名前
+     */
+    public final String getName() {
         return name;
     }
 }

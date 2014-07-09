@@ -29,29 +29,48 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- *
- * @author umireon
+ * 日付を表すエンティティです.
+ * @author Kaito Udagawa
  */
 public class EntityDate {
+    /**
+     * 日時です.
+     */
     private final Calendar cal;
 
+    /**
+     * 日時を今日として, 日付を作成します.
+     */
     public EntityDate() {
         cal = Calendar.getInstance();
     }
 
-    private EntityDate(Calendar cal) {
-        this.cal = cal;
+    /**
+     * 日時を指定して, 日付を作成します.
+     * @param date 日時
+     */
+    private EntityDate(final Calendar date) {
+        this.cal = date;
     }
 
-    public EntityDate addDays(int days) {
+    /**
+     * 日時を指定された日数だけ進めた日付を作成します.
+     * @param days 進める日数
+     * @return 新しく作成された日付
+     */
+    public final EntityDate addDays(final int days) {
         Calendar newCal;
         newCal = (Calendar) cal.clone();
         newCal.add(Calendar.DAY_OF_MONTH, days);
         return new EntityDate(newCal);
     }
 
+    /**
+     * 日付の文字列表現を作成します.
+     * @return 日付の文字列表現
+     */
     @Override
-    public String toString() {
+    public final String toString() {
         DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         return format.format(cal.getTime());
     }
