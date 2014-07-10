@@ -37,10 +37,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-/**
- *
- * @author umireon
- */
 public class SwLibraryMainClassSystemTest {
     private final PipedOutputStream in = new PipedOutputStream();
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -61,19 +57,21 @@ public class SwLibraryMainClassSystemTest {
         System.setIn(oldIn);
         System.setOut(oldOut);
     }
-    
+
     @Test
-    public void closedStdin() throws IOException {
+    public void 標準入力が閉じられている場合() throws IOException {
         in.close();
         try {
             SwLibraryMain.main(new String[0]);
         } catch (IllegalArgumentException e) {
+            assertTrue(out.toString().contains("資料"));
+            return;
         }
-        assertTrue(out.toString().contains("資料"));
+        fail();
     }
 
     @Test
-    public void normalOperation() throws IOException {
+    public void 成功する場合() throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
         writer.println("user1");
         writer.println("book1");

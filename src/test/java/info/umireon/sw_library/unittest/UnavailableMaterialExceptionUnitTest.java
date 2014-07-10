@@ -28,13 +28,9 @@ import info.umireon.sw_library.UnavailableMaterialException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author umireon
- */
 public class UnavailableMaterialExceptionUnitTest {
     @Test
-    public void exception() {
+    public void try節でキャッチできる() {
         try {
             throw new UnavailableMaterialException();
         } catch (UnavailableMaterialException e) {

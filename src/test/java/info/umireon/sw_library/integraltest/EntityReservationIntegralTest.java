@@ -29,16 +29,11 @@ import info.umireon.sw_library.EntityUser;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author umireon
- */
 public class EntityReservationIntegralTest {
     @Test
-    public void getReserver() {
+    public void 予約者を持っている() {
         EntityUser reserver = new EntityUser("reserver");
         EntityReservation reserve = new EntityReservation(reserver);
         assertEquals(reserver, reserve.getReserver());
     }
-    
 }

@@ -30,30 +30,26 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-/**
- *
- * @author umireon
- */
 public class ControlUserIntegralTest {
     private ControlUser ctrlUser;
-    
+
     @Before
     public void setup() {
         ctrlUser = new ControlUser();
     }
-    
+
     @Test
-    public void ctrlHasZeroUserInitially() {
+    public void 初期状態では利用者を持っていない() {
         assertEquals(ctrlUser.getUsers().size(), 0);
     }
-    
+
     @Test
-    public void getUserNullForNonexistent() {
+    public void 存在しない利用者を取得しようとするとnullを返す() {
         assertNull(ctrlUser.getUser("nonexistent"));
     }
-    
+
     @Test
-    public void getUser() {
+    public void 利用者を持っている() {
         EntityUser user = new EntityUser("user1");
         ctrlUser.addUser(user);
         assertEquals(ctrlUser.getUsers().size(), 1);

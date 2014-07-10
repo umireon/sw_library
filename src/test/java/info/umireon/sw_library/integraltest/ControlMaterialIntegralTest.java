@@ -28,94 +28,42 @@ import info.umireon.sw_library.ControlMaterial;
 import info.umireon.sw_library.EntityBook;
 import info.umireon.sw_library.EntityLoan;
 import info.umireon.sw_library.EntityUser;
-import info.umireon.sw_library.UnavailableMaterialException;
-import info.umireon.sw_library.UnknownMaterialException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-/**
- *
- * @author umireon
- */
 public class ControlMaterialIntegralTest {
     private ControlMaterial ctrlMaterial;
-    
+
     @Before
     public void setup() {
         ctrlMaterial = new ControlMaterial();
     }
-    
+
     @Test
-    public void ctrlHasZeroMaterialInitially() {
+    public void 初期状態では資料を持っていない() {
         assertEquals(ctrlMaterial.getMaterials().size(), 0);
     }
-    
+
     @Test
-    public void getMaterialNullForNonexistent() {
+    public void 存在しない資料を取得しようとするとnullを返す() {
         assertNull(ctrlMaterial.getMaterial("nonexistent"));
     }
     
     @Test
-    public void getMaterial() {
+    public void 資料を持っている() {
         EntityBook book = new EntityBook("book1");
         ctrlMaterial.addMaterial(book);
         assertEquals(ctrlMaterial.getMaterials().size(), 1);
         assertEquals(ctrlMaterial.getMaterial("book1"), book);
     }
-    
+
     @Test
-    public void lendMaterialNormally() throws Exception {
+    public void 貸出を行える() throws Exception {
         EntityUser user = new EntityUser("user1");
         EntityBook book = new EntityBook("book1");
         ctrlMaterial.addMaterial(book);
         ctrlMaterial.lendMaterial("book1", user);
         assertTrue(book.getStatus() instanceof EntityLoan);
-    }
-    
-    @Test
-    public void lendMaterialNonexistent() throws Exception {
-        EntityUser user = new EntityUser("user1");
-        EntityBook book = new EntityBook("book1");
-        ctrlMaterial.addMaterial(book);
-        try {
-            ctrlMaterial.lendMaterial("nonexistent", user);
-        } catch (UnknownMaterialException e) {
-            assertNull(book.getStatus());
-            return;
-        }
-        fail();
-    }
-    
-    @Test
-    public void lendMaterialLoan() throws Exception {
-        EntityUser user = new EntityUser("user1");
-        EntityBook book = new EntityBook("book1");
-        ctrlMaterial.addMaterial(book);
-        ctrlMaterial.lendMaterial("book1", user);
-        assertTrue(book.getStatus() instanceof EntityLoan);
-        try {
-            ctrlMaterial.lendMaterial("book1", user);
-        } catch (UnavailableMaterialException e) {
-            assertTrue(book.getStatus() instanceof EntityLoan);
-            return;
-        }
-        fail();
-    }
-    
-    @Test
-    public void lendMaterialReservedBySelf() throws Exception {
-        EntityUser user = new EntityUser("user1");
-        EntityBook book = new EntityBook("book1");
-        ctrlMaterial.addMaterial(book);
-        ctrlMaterial.lendMaterial("book1", user);
-        assertTrue(book.getStatus() instanceof EntityLoan);
-        try {
-            ctrlMaterial.lendMaterial("book1", user);
-        } catch (UnavailableMaterialException e) {
-            assertTrue(book.getStatus() instanceof EntityLoan);
-            return;
-        }
-        fail();
     }
 }

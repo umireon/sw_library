@@ -25,18 +25,12 @@
 package info.umireon.sw_library.unittest;
 
 import info.umireon.sw_library.EntityBook;
-import info.umireon.sw_library.EntityMaterial;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author umireon
- */
 public class EntityBookUnitTest {
-    
     @Test
-    public void nullname() {
+    public void 名前をnullにできない() {
         EntityBook book = null;
         try {
             book = new EntityBook(null);
@@ -47,7 +41,7 @@ public class EntityBookUnitTest {
     }
 
     @Test
-    public void name() {
+    public void 名前を持っている() {
         EntityBook book;
         book = new EntityBook("bookname");
         assertEquals("bookname", book.getName());

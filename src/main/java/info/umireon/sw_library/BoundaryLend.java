@@ -73,7 +73,7 @@ public class BoundaryLend {
     }
 
     /**
-     * ユーザからの入力を待ちます.
+     * 画面への入力を待ちます.
      * @throws IOException 入出力エラーが発生した場合
      */
     public final void listen() throws IOException {
@@ -145,10 +145,10 @@ public class BoundaryLend {
     }
 
     /**
-     * ユーザが新しく登録されたことを通知します.
-     * @param registered 新しく登録されたユーザ
+     * 利用者が新しく登録されたことを通知します.
+     * @param registered 新しく登録された利用者
      */
     private void noticeUserRegistration(final EntityUser registered) {
-        stdout.println("次のユーザが登録されました: " + registered.getName());
+        stdout.println("次の利用者が登録されました: " + registered.getName());
     }
 }

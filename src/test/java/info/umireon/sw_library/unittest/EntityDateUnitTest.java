@@ -30,13 +30,9 @@ import java.util.Calendar;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author umireon
- */
 public class EntityDateUnitTest {
     @Test
-    public void today() {
+    public void 作成時は今日を指す() {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         String dateString = format.format(cal.getTime());
@@ -46,7 +42,7 @@ public class EntityDateUnitTest {
     }
     
     @Test
-    public void after() {
+    public void 数日後の日付を作成できる() {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DAY_OF_MONTH, 14);
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");

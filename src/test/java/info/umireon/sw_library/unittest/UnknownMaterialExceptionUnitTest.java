@@ -28,13 +28,9 @@ import info.umireon.sw_library.UnknownMaterialException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author umireon
- */
 public class UnknownMaterialExceptionUnitTest {
     @Test
-    public void exception() {
+    public void try節でキャッチできる() {
         try {
             throw new UnknownMaterialException();
         } catch (UnknownMaterialException e) {
