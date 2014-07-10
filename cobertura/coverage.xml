@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="1.0" branch-rate="1.0" lines-covered="165" lines-valid="165" branches-covered="24" branches-valid="24" complexity="1.4871794871794872" version="2.0.3" timestamp="1404924408549">
+<coverage line-rate="1.0" branch-rate="1.0" lines-covered="165" lines-valid="165" branches-covered="24" branches-valid="24" complexity="1.4871794871794872" version="2.0.3" timestamp="1404984604685">
 	<sources>
 		<source>/home/ubuntu/src/github.com/umireon/sw_library/src/main/java</source>
 		<source>--source</source>
@@ -13,72 +13,72 @@
 					<methods>
 						<method name="&lt;init&gt;" signature="(Linfo/umireon/sw_library/ControlMaterial;Linfo/umireon/sw_library/ControlUser;Ljava/io/InputStream;Ljava/io/PrintStream;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="68" hits="7" branch="false"/>
-								<line number="69" hits="7" branch="false"/>
-								<line number="70" hits="7" branch="false"/>
-								<line number="71" hits="7" branch="false"/>
-								<line number="72" hits="7" branch="false"/>
-								<line number="73" hits="7" branch="false"/>
+								<line number="68" hits="8" branch="false"/>
+								<line number="69" hits="8" branch="false"/>
+								<line number="70" hits="8" branch="false"/>
+								<line number="71" hits="8" branch="false"/>
+								<line number="72" hits="8" branch="false"/>
+								<line number="73" hits="8" branch="false"/>
 							</lines>
 						</method>
 						<method name="indexMaterials" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="116" hits="10" branch="false"/>
-								<line number="117" hits="10" branch="true" condition-coverage="100% (2/2)">
+								<line number="116" hits="12" branch="false"/>
+								<line number="117" hits="12" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="118" hits="30" branch="false"/>
-								<line number="119" hits="30" branch="false"/>
-								<line number="120" hits="30" branch="false"/>
-								<line number="121" hits="30" branch="true" condition-coverage="100% (2/2)">
+								<line number="118" hits="36" branch="false"/>
+								<line number="119" hits="36" branch="false"/>
+								<line number="120" hits="36" branch="false"/>
+								<line number="121" hits="36" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="122" hits="13" branch="false"/>
-								<line number="123" hits="13" branch="false"/>
-								<line number="125" hits="30" branch="true" condition-coverage="100% (2/2)">
+								<line number="122" hits="16" branch="false"/>
+								<line number="123" hits="16" branch="false"/>
+								<line number="125" hits="36" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="126" hits="10" branch="false"/>
-								<line number="127" hits="10" branch="false"/>
-								<line number="128" hits="10" branch="false"/>
-								<line number="130" hits="30" branch="false"/>
-								<line number="131" hits="30" branch="false"/>
-								<line number="132" hits="10" branch="false"/>
+								<line number="126" hits="11" branch="false"/>
+								<line number="127" hits="11" branch="false"/>
+								<line number="128" hits="11" branch="false"/>
+								<line number="130" hits="36" branch="false"/>
+								<line number="131" hits="36" branch="false"/>
+								<line number="132" hits="12" branch="false"/>
 							</lines>
 						</method>
 						<method name="indexUsers" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="138" hits="7" branch="false"/>
-								<line number="139" hits="7" branch="true" condition-coverage="100% (2/2)">
+								<line number="138" hits="8" branch="false"/>
+								<line number="139" hits="8" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="140" hits="14" branch="false"/>
-								<line number="141" hits="14" branch="false"/>
-								<line number="142" hits="14" branch="false"/>
-								<line number="143" hits="14" branch="false"/>
-								<line number="144" hits="14" branch="false"/>
-								<line number="145" hits="7" branch="false"/>
+								<line number="140" hits="16" branch="false"/>
+								<line number="141" hits="16" branch="false"/>
+								<line number="142" hits="16" branch="false"/>
+								<line number="143" hits="16" branch="false"/>
+								<line number="144" hits="16" branch="false"/>
+								<line number="145" hits="8" branch="false"/>
 							</lines>
 						</method>
 						<method name="listen" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="81" hits="7" branch="false"/>
-								<line number="82" hits="7" branch="false"/>
-								<line number="84" hits="7" branch="false"/>
-								<line number="85" hits="7" branch="false"/>
-								<line number="86" hits="7" branch="false"/>
-								<line number="88" hits="7" branch="false"/>
-								<line number="89" hits="7" branch="false"/>
-								<line number="91" hits="7" branch="false"/>
-								<line number="92" hits="7" branch="true" condition-coverage="100% (2/2)">
+								<line number="81" hits="8" branch="false"/>
+								<line number="82" hits="8" branch="false"/>
+								<line number="84" hits="8" branch="false"/>
+								<line number="85" hits="8" branch="false"/>
+								<line number="86" hits="8" branch="false"/>
+								<line number="88" hits="8" branch="false"/>
+								<line number="89" hits="8" branch="false"/>
+								<line number="91" hits="8" branch="false"/>
+								<line number="92" hits="8" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
@@ -86,18 +86,18 @@
 								<line number="93" hits="2" branch="false"/>
 								<line number="94" hits="1" branch="false"/>
 								<line number="95" hits="1" branch="false"/>
-								<line number="98" hits="6" branch="false"/>
-								<line number="99" hits="6" branch="false"/>
-								<line number="101" hits="6" branch="false"/>
-								<line number="102" hits="3" branch="false"/>
+								<line number="98" hits="7" branch="false"/>
+								<line number="99" hits="7" branch="false"/>
+								<line number="101" hits="7" branch="false"/>
+								<line number="102" hits="4" branch="false"/>
 								<line number="103" hits="1" branch="false"/>
 								<line number="104" hits="1" branch="false"/>
 								<line number="105" hits="1" branch="false"/>
 								<line number="106" hits="1" branch="false"/>
 								<line number="107" hits="1" branch="false"/>
 								<line number="108" hits="1" branch="false"/>
-								<line number="109" hits="5" branch="false"/>
-								<line number="110" hits="6" branch="false"/>
+								<line number="109" hits="6" branch="false"/>
+								<line number="110" hits="7" branch="false"/>
 							</lines>
 						</method>
 						<method name="noticeUserRegistration" signature="(Linfo/umireon/sw_library/EntityUser;)V" line-rate="1.0" branch-rate="1.0">
@@ -108,21 +108,21 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="68" hits="7" branch="false"/>
-						<line number="69" hits="7" branch="false"/>
-						<line number="70" hits="7" branch="false"/>
-						<line number="71" hits="7" branch="false"/>
-						<line number="72" hits="7" branch="false"/>
-						<line number="73" hits="7" branch="false"/>
-						<line number="81" hits="7" branch="false"/>
-						<line number="82" hits="7" branch="false"/>
-						<line number="84" hits="7" branch="false"/>
-						<line number="85" hits="7" branch="false"/>
-						<line number="86" hits="7" branch="false"/>
-						<line number="88" hits="7" branch="false"/>
-						<line number="89" hits="7" branch="false"/>
-						<line number="91" hits="7" branch="false"/>
-						<line number="92" hits="7" branch="true" condition-coverage="100% (2/2)">
+						<line number="68" hits="8" branch="false"/>
+						<line number="69" hits="8" branch="false"/>
+						<line number="70" hits="8" branch="false"/>
+						<line number="71" hits="8" branch="false"/>
+						<line number="72" hits="8" branch="false"/>
+						<line number="73" hits="8" branch="false"/>
+						<line number="81" hits="8" branch="false"/>
+						<line number="82" hits="8" branch="false"/>
+						<line number="84" hits="8" branch="false"/>
+						<line number="85" hits="8" branch="false"/>
+						<line number="86" hits="8" branch="false"/>
+						<line number="88" hits="8" branch="false"/>
+						<line number="89" hits="8" branch="false"/>
+						<line number="91" hits="8" branch="false"/>
+						<line number="92" hits="8" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
@@ -130,57 +130,57 @@
 						<line number="93" hits="2" branch="false"/>
 						<line number="94" hits="1" branch="false"/>
 						<line number="95" hits="1" branch="false"/>
-						<line number="98" hits="6" branch="false"/>
-						<line number="99" hits="6" branch="false"/>
-						<line number="101" hits="6" branch="false"/>
-						<line number="102" hits="3" branch="false"/>
+						<line number="98" hits="7" branch="false"/>
+						<line number="99" hits="7" branch="false"/>
+						<line number="101" hits="7" branch="false"/>
+						<line number="102" hits="4" branch="false"/>
 						<line number="103" hits="1" branch="false"/>
 						<line number="104" hits="1" branch="false"/>
 						<line number="105" hits="1" branch="false"/>
 						<line number="106" hits="1" branch="false"/>
 						<line number="107" hits="1" branch="false"/>
 						<line number="108" hits="1" branch="false"/>
-						<line number="109" hits="5" branch="false"/>
-						<line number="110" hits="6" branch="false"/>
-						<line number="116" hits="10" branch="false"/>
-						<line number="117" hits="10" branch="true" condition-coverage="100% (2/2)">
+						<line number="109" hits="6" branch="false"/>
+						<line number="110" hits="7" branch="false"/>
+						<line number="116" hits="12" branch="false"/>
+						<line number="117" hits="12" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="118" hits="30" branch="false"/>
-						<line number="119" hits="30" branch="false"/>
-						<line number="120" hits="30" branch="false"/>
-						<line number="121" hits="30" branch="true" condition-coverage="100% (2/2)">
+						<line number="118" hits="36" branch="false"/>
+						<line number="119" hits="36" branch="false"/>
+						<line number="120" hits="36" branch="false"/>
+						<line number="121" hits="36" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="122" hits="13" branch="false"/>
-						<line number="123" hits="13" branch="false"/>
-						<line number="125" hits="30" branch="true" condition-coverage="100% (2/2)">
+						<line number="122" hits="16" branch="false"/>
+						<line number="123" hits="16" branch="false"/>
+						<line number="125" hits="36" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="126" hits="10" branch="false"/>
-						<line number="127" hits="10" branch="false"/>
-						<line number="128" hits="10" branch="false"/>
-						<line number="130" hits="30" branch="false"/>
-						<line number="131" hits="30" branch="false"/>
-						<line number="132" hits="10" branch="false"/>
-						<line number="138" hits="7" branch="false"/>
-						<line number="139" hits="7" branch="true" condition-coverage="100% (2/2)">
+						<line number="126" hits="11" branch="false"/>
+						<line number="127" hits="11" branch="false"/>
+						<line number="128" hits="11" branch="false"/>
+						<line number="130" hits="36" branch="false"/>
+						<line number="131" hits="36" branch="false"/>
+						<line number="132" hits="12" branch="false"/>
+						<line number="138" hits="8" branch="false"/>
+						<line number="139" hits="8" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="140" hits="14" branch="false"/>
-						<line number="141" hits="14" branch="false"/>
-						<line number="142" hits="14" branch="false"/>
-						<line number="143" hits="14" branch="false"/>
-						<line number="144" hits="14" branch="false"/>
-						<line number="145" hits="7" branch="false"/>
+						<line number="140" hits="16" branch="false"/>
+						<line number="141" hits="16" branch="false"/>
+						<line number="142" hits="16" branch="false"/>
+						<line number="143" hits="16" branch="false"/>
+						<line number="144" hits="16" branch="false"/>
+						<line number="145" hits="8" branch="false"/>
 						<line number="152" hits="1" branch="false"/>
 						<line number="153" hits="1" branch="false"/>
 					</lines>
@@ -189,43 +189,43 @@
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="49" hits="18" branch="false"/>
-								<line number="50" hits="18" branch="false"/>
-								<line number="51" hits="18" branch="false"/>
+								<line number="49" hits="16" branch="false"/>
+								<line number="50" hits="16" branch="false"/>
+								<line number="51" hits="16" branch="false"/>
 							</lines>
 						</method>
 						<method name="addMaterial" signature="(Linfo/umireon/sw_library/EntityMaterial;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="75" hits="30" branch="false"/>
-								<line number="76" hits="30" branch="false"/>
+								<line number="75" hits="29" branch="false"/>
+								<line number="76" hits="29" branch="false"/>
 							</lines>
 						</method>
 						<method name="getMaterial" signature="(Ljava/lang/String;)Linfo/umireon/sw_library/EntityMaterial;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="67" hits="24" branch="false"/>
+								<line number="67" hits="17" branch="false"/>
 							</lines>
 						</method>
 						<method name="getMaterials" signature="()Ljava/util/Collection;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="58" hits="12" branch="false"/>
+								<line number="58" hits="14" branch="false"/>
 							</lines>
 						</method>
 						<method name="lendMaterial" signature="(Ljava/lang/String;Linfo/umireon/sw_library/EntityUser;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="90" hits="17" branch="false"/>
-								<line number="91" hits="17" branch="true" condition-coverage="100% (2/2)">
+								<line number="90" hits="13" branch="false"/>
+								<line number="91" hits="13" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="92" hits="2" branch="false"/>
-								<line number="95" hits="15" branch="true" condition-coverage="100% (2/2)">
+								<line number="95" hits="11" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="96" hits="4" branch="false"/>
-								<line number="99" hits="11" branch="true" condition-coverage="100% (2/2)">
+								<line number="96" hits="2" branch="false"/>
+								<line number="99" hits="9" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
@@ -237,35 +237,35 @@
 								</line>
 								<line number="101" hits="1" branch="false"/>
 								<line number="103" hits="2" branch="false"/>
-								<line number="108" hits="9" branch="false"/>
-								<line number="109" hits="9" branch="false"/>
-								<line number="110" hits="9" branch="false"/>
-								<line number="111" hits="9" branch="false"/>
+								<line number="108" hits="7" branch="false"/>
+								<line number="109" hits="7" branch="false"/>
+								<line number="110" hits="7" branch="false"/>
+								<line number="111" hits="7" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="49" hits="18" branch="false"/>
-						<line number="50" hits="18" branch="false"/>
-						<line number="51" hits="18" branch="false"/>
-						<line number="58" hits="12" branch="false"/>
-						<line number="67" hits="24" branch="false"/>
-						<line number="75" hits="30" branch="false"/>
-						<line number="76" hits="30" branch="false"/>
-						<line number="90" hits="17" branch="false"/>
-						<line number="91" hits="17" branch="true" condition-coverage="100% (2/2)">
+						<line number="49" hits="16" branch="false"/>
+						<line number="50" hits="16" branch="false"/>
+						<line number="51" hits="16" branch="false"/>
+						<line number="58" hits="14" branch="false"/>
+						<line number="67" hits="17" branch="false"/>
+						<line number="75" hits="29" branch="false"/>
+						<line number="76" hits="29" branch="false"/>
+						<line number="90" hits="13" branch="false"/>
+						<line number="91" hits="13" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="92" hits="2" branch="false"/>
-						<line number="95" hits="15" branch="true" condition-coverage="100% (2/2)">
+						<line number="95" hits="11" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="96" hits="4" branch="false"/>
-						<line number="99" hits="11" branch="true" condition-coverage="100% (2/2)">
+						<line number="96" hits="2" branch="false"/>
+						<line number="99" hits="9" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
@@ -277,119 +277,119 @@
 						</line>
 						<line number="101" hits="1" branch="false"/>
 						<line number="103" hits="2" branch="false"/>
-						<line number="108" hits="9" branch="false"/>
-						<line number="109" hits="9" branch="false"/>
-						<line number="110" hits="9" branch="false"/>
-						<line number="111" hits="9" branch="false"/>
+						<line number="108" hits="7" branch="false"/>
+						<line number="109" hits="7" branch="false"/>
+						<line number="110" hits="7" branch="false"/>
+						<line number="111" hits="7" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.ControlUser" filename="info/umireon/sw_library/ControlUser.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="44" hits="10" branch="false"/>
-								<line number="45" hits="10" branch="false"/>
-								<line number="46" hits="10" branch="false"/>
+								<line number="44" hits="11" branch="false"/>
+								<line number="45" hits="11" branch="false"/>
+								<line number="46" hits="11" branch="false"/>
 							</lines>
 						</method>
 						<method name="addUser" signature="(Linfo/umireon/sw_library/EntityUser;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="70" hits="16" branch="false"/>
-								<line number="71" hits="16" branch="false"/>
+								<line number="70" hits="18" branch="false"/>
+								<line number="71" hits="18" branch="false"/>
 							</lines>
 						</method>
 						<method name="getUser" signature="(Ljava/lang/String;)Linfo/umireon/sw_library/EntityUser;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="62" hits="10" branch="false"/>
+								<line number="62" hits="11" branch="false"/>
 							</lines>
 						</method>
 						<method name="getUsers" signature="()Ljava/util/Collection;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="53" hits="9" branch="false"/>
+								<line number="53" hits="10" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="44" hits="10" branch="false"/>
-						<line number="45" hits="10" branch="false"/>
-						<line number="46" hits="10" branch="false"/>
-						<line number="53" hits="9" branch="false"/>
-						<line number="62" hits="10" branch="false"/>
-						<line number="70" hits="16" branch="false"/>
-						<line number="71" hits="16" branch="false"/>
+						<line number="44" hits="11" branch="false"/>
+						<line number="45" hits="11" branch="false"/>
+						<line number="46" hits="11" branch="false"/>
+						<line number="53" hits="10" branch="false"/>
+						<line number="62" hits="11" branch="false"/>
+						<line number="70" hits="18" branch="false"/>
+						<line number="71" hits="18" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.EntityBook" filename="info/umireon/sw_library/EntityBook.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="37" hits="29" branch="false"/>
-								<line number="38" hits="28" branch="false"/>
+								<line number="37" hits="27" branch="false"/>
+								<line number="38" hits="26" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="37" hits="29" branch="false"/>
-						<line number="38" hits="28" branch="false"/>
+						<line number="37" hits="27" branch="false"/>
+						<line number="38" hits="26" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.EntityDate" filename="info/umireon/sw_library/EntityDate.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="44" hits="21" branch="false"/>
-								<line number="45" hits="21" branch="false"/>
-								<line number="46" hits="21" branch="false"/>
+								<line number="44" hits="20" branch="false"/>
+								<line number="45" hits="20" branch="false"/>
+								<line number="46" hits="20" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Ljava/util/Calendar;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="52" hits="13" branch="false"/>
-								<line number="53" hits="13" branch="false"/>
-								<line number="54" hits="13" branch="false"/>
+								<line number="52" hits="11" branch="false"/>
+								<line number="53" hits="11" branch="false"/>
+								<line number="54" hits="11" branch="false"/>
 							</lines>
 						</method>
 						<method name="addDays" signature="(I)Linfo/umireon/sw_library/EntityDate;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="63" hits="13" branch="false"/>
-								<line number="64" hits="13" branch="false"/>
-								<line number="65" hits="13" branch="false"/>
+								<line number="63" hits="11" branch="false"/>
+								<line number="64" hits="11" branch="false"/>
+								<line number="65" hits="11" branch="false"/>
 							</lines>
 						</method>
 						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="74" hits="16" branch="false"/>
-								<line number="75" hits="16" branch="false"/>
+								<line number="74" hits="19" branch="false"/>
+								<line number="75" hits="19" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="44" hits="21" branch="false"/>
-						<line number="45" hits="21" branch="false"/>
-						<line number="46" hits="21" branch="false"/>
-						<line number="52" hits="13" branch="false"/>
-						<line number="53" hits="13" branch="false"/>
-						<line number="54" hits="13" branch="false"/>
-						<line number="63" hits="13" branch="false"/>
-						<line number="64" hits="13" branch="false"/>
-						<line number="65" hits="13" branch="false"/>
-						<line number="74" hits="16" branch="false"/>
-						<line number="75" hits="16" branch="false"/>
+						<line number="44" hits="20" branch="false"/>
+						<line number="45" hits="20" branch="false"/>
+						<line number="46" hits="20" branch="false"/>
+						<line number="52" hits="11" branch="false"/>
+						<line number="53" hits="11" branch="false"/>
+						<line number="54" hits="11" branch="false"/>
+						<line number="63" hits="11" branch="false"/>
+						<line number="64" hits="11" branch="false"/>
+						<line number="65" hits="11" branch="false"/>
+						<line number="74" hits="19" branch="false"/>
+						<line number="75" hits="19" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.EntityLoan" filename="info/umireon/sw_library/EntityLoan.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Linfo/umireon/sw_library/EntityUser;Linfo/umireon/sw_library/EntityDate;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="47" hits="20" branch="false"/>
-								<line number="48" hits="20" branch="false"/>
-								<line number="49" hits="20" branch="false"/>
-								<line number="50" hits="20" branch="false"/>
+								<line number="47" hits="19" branch="false"/>
+								<line number="48" hits="19" branch="false"/>
+								<line number="49" hits="19" branch="false"/>
+								<line number="50" hits="19" branch="false"/>
 							</lines>
 						</method>
 						<method name="getBorrower" signature="()Linfo/umireon/sw_library/EntityUser;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="57" hits="3" branch="false"/>
+								<line number="57" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="getDue" signature="()Linfo/umireon/sw_library/EntityDate;" line-rate="1.0" branch-rate="1.0">
@@ -399,61 +399,61 @@
 						</method>
 						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="74" hits="14" branch="false"/>
-								<line number="75" hits="14" branch="false"/>
-								<line number="76" hits="14" branch="false"/>
-								<line number="77" hits="14" branch="false"/>
-								<line number="78" hits="14" branch="false"/>
-								<line number="79" hits="14" branch="false"/>
-								<line number="80" hits="14" branch="false"/>
+								<line number="74" hits="17" branch="false"/>
+								<line number="75" hits="17" branch="false"/>
+								<line number="76" hits="17" branch="false"/>
+								<line number="77" hits="17" branch="false"/>
+								<line number="78" hits="17" branch="false"/>
+								<line number="79" hits="17" branch="false"/>
+								<line number="80" hits="17" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="47" hits="20" branch="false"/>
-						<line number="48" hits="20" branch="false"/>
-						<line number="49" hits="20" branch="false"/>
-						<line number="50" hits="20" branch="false"/>
-						<line number="57" hits="3" branch="false"/>
+						<line number="47" hits="19" branch="false"/>
+						<line number="48" hits="19" branch="false"/>
+						<line number="49" hits="19" branch="false"/>
+						<line number="50" hits="19" branch="false"/>
+						<line number="57" hits="2" branch="false"/>
 						<line number="65" hits="1" branch="false"/>
-						<line number="74" hits="14" branch="false"/>
-						<line number="75" hits="14" branch="false"/>
-						<line number="76" hits="14" branch="false"/>
-						<line number="77" hits="14" branch="false"/>
-						<line number="78" hits="14" branch="false"/>
-						<line number="79" hits="14" branch="false"/>
-						<line number="80" hits="14" branch="false"/>
+						<line number="74" hits="17" branch="false"/>
+						<line number="75" hits="17" branch="false"/>
+						<line number="76" hits="17" branch="false"/>
+						<line number="77" hits="17" branch="false"/>
+						<line number="78" hits="17" branch="false"/>
+						<line number="79" hits="17" branch="false"/>
+						<line number="80" hits="17" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.EntityMagazine" filename="info/umireon/sw_library/EntityMagazine.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="37" hits="9" branch="false"/>
-								<line number="38" hits="8" branch="false"/>
+								<line number="37" hits="10" branch="false"/>
+								<line number="38" hits="9" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="37" hits="9" branch="false"/>
-						<line number="38" hits="8" branch="false"/>
+						<line number="37" hits="10" branch="false"/>
+						<line number="38" hits="9" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.EntityMaterial" filename="info/umireon/sw_library/EntityMaterial.java" line-rate="1.0" branch-rate="1.0" complexity="1.25">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="43" hits="38" branch="false"/>
-								<line number="54" hits="38" branch="false"/>
-								<line number="55" hits="38" branch="true" condition-coverage="100% (2/2)">
+								<line number="43" hits="37" branch="false"/>
+								<line number="54" hits="37" branch="false"/>
+								<line number="55" hits="37" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="56" hits="2" branch="false"/>
-								<line number="59" hits="36" branch="false"/>
-								<line number="60" hits="36" branch="false"/>
-								<line number="61" hits="36" branch="false"/>
+								<line number="59" hits="35" branch="false"/>
+								<line number="60" hits="35" branch="false"/>
+								<line number="61" hits="35" branch="false"/>
 							</lines>
 						</method>
 						<method name="addReservation" signature="(Linfo/umireon/sw_library/EntityReservation;)V" line-rate="1.0" branch-rate="1.0">
@@ -464,17 +464,17 @@
 						</method>
 						<method name="getName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="68" hits="62" branch="false"/>
+								<line number="68" hits="67" branch="false"/>
 							</lines>
 						</method>
 						<method name="getStatus" signature="()Linfo/umireon/sw_library/EntityStatus;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="76" hits="68" branch="false"/>
+								<line number="76" hits="67" branch="false"/>
 							</lines>
 						</method>
 						<method name="isReserved" signature="()Z" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="116" hits="45" branch="true" condition-coverage="100% (2/2)">
+								<line number="116" hits="48" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
@@ -483,7 +483,7 @@
 						</method>
 						<method name="peekReservation" signature="()Linfo/umireon/sw_library/EntityReservation;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="100" hits="14" branch="false"/>
+								<line number="100" hits="15" branch="false"/>
 							</lines>
 						</method>
 						<method name="pollReservation" signature="()Linfo/umireon/sw_library/EntityReservation;" line-rate="1.0" branch-rate="1.0">
@@ -493,32 +493,32 @@
 						</method>
 						<method name="setStatus" signature="(Linfo/umireon/sw_library/EntityStatus;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="84" hits="17" branch="false"/>
-								<line number="85" hits="17" branch="false"/>
+								<line number="84" hits="16" branch="false"/>
+								<line number="85" hits="16" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="43" hits="38" branch="false"/>
-						<line number="54" hits="38" branch="false"/>
-						<line number="55" hits="38" branch="true" condition-coverage="100% (2/2)">
+						<line number="43" hits="37" branch="false"/>
+						<line number="54" hits="37" branch="false"/>
+						<line number="55" hits="37" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="56" hits="2" branch="false"/>
-						<line number="59" hits="36" branch="false"/>
-						<line number="60" hits="36" branch="false"/>
-						<line number="61" hits="36" branch="false"/>
-						<line number="68" hits="62" branch="false"/>
-						<line number="76" hits="68" branch="false"/>
-						<line number="84" hits="17" branch="false"/>
-						<line number="85" hits="17" branch="false"/>
+						<line number="59" hits="35" branch="false"/>
+						<line number="60" hits="35" branch="false"/>
+						<line number="61" hits="35" branch="false"/>
+						<line number="68" hits="67" branch="false"/>
+						<line number="76" hits="67" branch="false"/>
+						<line number="84" hits="16" branch="false"/>
+						<line number="85" hits="16" branch="false"/>
 						<line number="92" hits="10" branch="false"/>
 						<line number="93" hits="10" branch="false"/>
-						<line number="100" hits="14" branch="false"/>
+						<line number="100" hits="15" branch="false"/>
 						<line number="108" hits="2" branch="false"/>
-						<line number="116" hits="45" branch="true" condition-coverage="100% (2/2)">
+						<line number="116" hits="48" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
@@ -536,7 +536,7 @@
 						</method>
 						<method name="getReserver" signature="()Linfo/umireon/sw_library/EntityUser;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="50" hits="14" branch="false"/>
+								<line number="50" hits="15" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -544,53 +544,53 @@
 						<line number="41" hits="11" branch="false"/>
 						<line number="42" hits="11" branch="false"/>
 						<line number="43" hits="11" branch="false"/>
-						<line number="50" hits="14" branch="false"/>
+						<line number="50" hits="15" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.EntityStatus" filename="info/umireon/sw_library/EntityStatus.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="31" hits="20" branch="false"/>
+								<line number="31" hits="19" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="31" hits="20" branch="false"/>
+						<line number="31" hits="19" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.EntityUser" filename="info/umireon/sw_library/EntityUser.java" line-rate="1.0" branch-rate="1.0" complexity="2.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="41" hits="33" branch="false"/>
-								<line number="42" hits="33" branch="true" condition-coverage="100% (2/2)">
+								<line number="41" hits="32" branch="false"/>
+								<line number="42" hits="32" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="43" hits="2" branch="false"/>
-								<line number="46" hits="31" branch="false"/>
-								<line number="47" hits="31" branch="false"/>
+								<line number="46" hits="30" branch="false"/>
+								<line number="47" hits="30" branch="false"/>
 							</lines>
 						</method>
 						<method name="getName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="54" hits="58" branch="false"/>
+								<line number="54" hits="65" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="41" hits="33" branch="false"/>
-						<line number="42" hits="33" branch="true" condition-coverage="100% (2/2)">
+						<line number="41" hits="32" branch="false"/>
+						<line number="42" hits="32" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="43" hits="2" branch="false"/>
-						<line number="46" hits="31" branch="false"/>
-						<line number="47" hits="31" branch="false"/>
-						<line number="54" hits="58" branch="false"/>
+						<line number="46" hits="30" branch="false"/>
+						<line number="47" hits="30" branch="false"/>
+						<line number="54" hits="65" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.ReservedMaterialException" filename="info/umireon/sw_library/ReservedMaterialException.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
@@ -609,10 +609,10 @@
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/io/InputStream;Ljava/io/PrintStream;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="62" hits="7" branch="false"/>
-								<line number="63" hits="7" branch="false"/>
-								<line number="64" hits="7" branch="false"/>
-								<line number="65" hits="7" branch="false"/>
+								<line number="62" hits="8" branch="false"/>
+								<line number="63" hits="8" branch="false"/>
+								<line number="64" hits="8" branch="false"/>
+								<line number="65" hits="8" branch="false"/>
 							</lines>
 						</method>
 						<method name="main" signature="([Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
@@ -624,24 +624,24 @@
 						</method>
 						<method name="start" signature="([Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="78" hits="7" branch="false"/>
-								<line number="79" hits="7" branch="false"/>
-								<line number="81" hits="7" branch="false"/>
-								<line number="83" hits="7" branch="false"/>
-								<line number="84" hits="7" branch="false"/>
-								<line number="85" hits="7" branch="false"/>
-								<line number="86" hits="7" branch="false"/>
-								<line number="87" hits="7" branch="false"/>
-								<line number="89" hits="7" branch="false"/>
-								<line number="90" hits="7" branch="false"/>
-								<line number="91" hits="7" branch="false"/>
-								<line number="92" hits="7" branch="false"/>
-								<line number="93" hits="7" branch="false"/>
-								<line number="94" hits="7" branch="false"/>
-								<line number="95" hits="7" branch="false"/>
-								<line number="96" hits="7" branch="false"/>
-								<line number="99" hits="7" branch="false"/>
-								<line number="100" hits="6" branch="false"/>
+								<line number="78" hits="8" branch="false"/>
+								<line number="79" hits="8" branch="false"/>
+								<line number="81" hits="8" branch="false"/>
+								<line number="83" hits="8" branch="false"/>
+								<line number="84" hits="8" branch="false"/>
+								<line number="85" hits="8" branch="false"/>
+								<line number="86" hits="8" branch="false"/>
+								<line number="87" hits="8" branch="false"/>
+								<line number="89" hits="8" branch="false"/>
+								<line number="90" hits="8" branch="false"/>
+								<line number="91" hits="8" branch="false"/>
+								<line number="92" hits="8" branch="false"/>
+								<line number="93" hits="8" branch="false"/>
+								<line number="94" hits="8" branch="false"/>
+								<line number="95" hits="8" branch="false"/>
+								<line number="96" hits="8" branch="false"/>
+								<line number="99" hits="8" branch="false"/>
+								<line number="100" hits="7" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -649,40 +649,40 @@
 						<line number="43" hits="2" branch="false"/>
 						<line number="44" hits="2" branch="false"/>
 						<line number="45" hits="1" branch="false"/>
-						<line number="62" hits="7" branch="false"/>
-						<line number="63" hits="7" branch="false"/>
-						<line number="64" hits="7" branch="false"/>
-						<line number="65" hits="7" branch="false"/>
-						<line number="78" hits="7" branch="false"/>
-						<line number="79" hits="7" branch="false"/>
-						<line number="81" hits="7" branch="false"/>
-						<line number="83" hits="7" branch="false"/>
-						<line number="84" hits="7" branch="false"/>
-						<line number="85" hits="7" branch="false"/>
-						<line number="86" hits="7" branch="false"/>
-						<line number="87" hits="7" branch="false"/>
-						<line number="89" hits="7" branch="false"/>
-						<line number="90" hits="7" branch="false"/>
-						<line number="91" hits="7" branch="false"/>
-						<line number="92" hits="7" branch="false"/>
-						<line number="93" hits="7" branch="false"/>
-						<line number="94" hits="7" branch="false"/>
-						<line number="95" hits="7" branch="false"/>
-						<line number="96" hits="7" branch="false"/>
-						<line number="99" hits="7" branch="false"/>
-						<line number="100" hits="6" branch="false"/>
+						<line number="62" hits="8" branch="false"/>
+						<line number="63" hits="8" branch="false"/>
+						<line number="64" hits="8" branch="false"/>
+						<line number="65" hits="8" branch="false"/>
+						<line number="78" hits="8" branch="false"/>
+						<line number="79" hits="8" branch="false"/>
+						<line number="81" hits="8" branch="false"/>
+						<line number="83" hits="8" branch="false"/>
+						<line number="84" hits="8" branch="false"/>
+						<line number="85" hits="8" branch="false"/>
+						<line number="86" hits="8" branch="false"/>
+						<line number="87" hits="8" branch="false"/>
+						<line number="89" hits="8" branch="false"/>
+						<line number="90" hits="8" branch="false"/>
+						<line number="91" hits="8" branch="false"/>
+						<line number="92" hits="8" branch="false"/>
+						<line number="93" hits="8" branch="false"/>
+						<line number="94" hits="8" branch="false"/>
+						<line number="95" hits="8" branch="false"/>
+						<line number="96" hits="8" branch="false"/>
+						<line number="99" hits="8" branch="false"/>
+						<line number="100" hits="7" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.UnavailableMaterialException" filename="info/umireon/sw_library/UnavailableMaterialException.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="31" hits="5" branch="false"/>
+								<line number="31" hits="3" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="31" hits="5" branch="false"/>
+						<line number="31" hits="3" branch="false"/>
 					</lines>
 				</class>
 				<class name="info.umireon.sw_library.UnknownMaterialException" filename="info/umireon/sw_library/UnknownMaterialException.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">

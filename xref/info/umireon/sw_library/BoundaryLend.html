@@ -83,7 +83,7 @@
 <a class="jxr_linenumber" name="73" href="#73">73</a>      }
 <a class="jxr_linenumber" name="74" href="#74">74</a>  
 <a class="jxr_linenumber" name="75" href="#75">75</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="76" href="#76">76</a>  <em class="jxr_javadoccomment">     * ユーザからの入力を待ちます.</em>
+<a class="jxr_linenumber" name="76" href="#76">76</a>  <em class="jxr_javadoccomment">     * 画面への入力を待ちます.</em>
 <a class="jxr_linenumber" name="77" href="#77">77</a>  <em class="jxr_javadoccomment">     * @throws IOException 入出力エラーが発生した場合</em>
 <a class="jxr_linenumber" name="78" href="#78">78</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="79" href="#79">79</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> listen() <strong class="jxr_keyword">throws</strong> IOException {
@@ -155,11 +155,11 @@
 <a class="jxr_linenumber" name="145" href="#145">145</a>     }
 <a class="jxr_linenumber" name="146" href="#146">146</a> 
 <a class="jxr_linenumber" name="147" href="#147">147</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="148" href="#148">148</a> <em class="jxr_javadoccomment">     * ユーザが新しく登録されたことを通知します.</em>
-<a class="jxr_linenumber" name="149" href="#149">149</a> <em class="jxr_javadoccomment">     * @param registered 新しく登録されたユーザ</em>
+<a class="jxr_linenumber" name="148" href="#148">148</a> <em class="jxr_javadoccomment">     * 利用者が新しく登録されたことを通知します.</em>
+<a class="jxr_linenumber" name="149" href="#149">149</a> <em class="jxr_javadoccomment">     * @param registered 新しく登録された利用者</em>
 <a class="jxr_linenumber" name="150" href="#150">150</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="151" href="#151">151</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> noticeUserRegistration(<strong class="jxr_keyword">final</strong> <a href="../../../info/umireon/sw_library/EntityUser.html">EntityUser</a> registered) {
-<a class="jxr_linenumber" name="152" href="#152">152</a>         stdout.println(<span class="jxr_string">"次のユーザが登録されました: "</span> + registered.getName());
+<a class="jxr_linenumber" name="152" href="#152">152</a>         stdout.println(<span class="jxr_string">"次の利用者が登録されました: "</span> + registered.getName());
 <a class="jxr_linenumber" name="153" href="#153">153</a>     }
 <a class="jxr_linenumber" name="154" href="#154">154</a> }
 </pre>
