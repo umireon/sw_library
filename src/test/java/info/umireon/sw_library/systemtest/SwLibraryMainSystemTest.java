@@ -27,7 +27,6 @@ package info.umireon.sw_library.systemtest;
 import info.umireon.sw_library.SwLibraryMain;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintStream;
@@ -36,10 +35,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-/**
- *
- * @author umireon
- */
 public class SwLibraryMainSystemTest {
     private SwLibraryMain main;
     private PipedOutputStream in;
@@ -55,52 +50,62 @@ public class SwLibraryMainSystemTest {
     }
 
     @Test
-    public void 貸出可能() throws IOException {
+    public void 利用可能な場合() throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
         writer.println("user1");
         writer.println("book1");
         this.main.start(new String[0]);
-        
+
         assertTrue(out.toString().contains("- book1 貸出中(user1; "));
     }
-    
+
     @Test
-    public void 貸出不可能() throws IOException {
+    public void 貸出中な場合() throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
         writer.println("user1");
         writer.println("book2");
         this.main.start(new String[0]);
-        
+
         assertTrue(out.toString().contains("指定された資料は貸出できません"));
     }
-    
+
     @Test
-    public void 予約中() throws IOException {
+    public void 他の利用者に予約されている場合() throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
         writer.println("user2");
         writer.println("mag1");
         this.main.start(new String[0]);
-        
+
         assertTrue(out.toString().contains("指定された資料は予約されています"));
     }
-    
+
     @Test
-    public void 資料未登録() throws IOException {
+    public void 自分で予約している場合() throws IOException {
+        PrintWriter writer = new PrintWriter(in, true);
+        writer.println("user1");
+        writer.println("mag1");
+        this.main.start(new String[0]);
+
+        assertTrue(out.toString().contains("- mag1 貸出中(user1; "));
+    }
+
+    @Test
+    public void 資料が未登録の場合() throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
         writer.println("user1");
         writer.println("book3");
         this.main.start(new String[0]);
-        
+
         assertTrue(out.toString().contains("指定された資料は存在しません"));
     }
-    
+
     @Test
-    public void 利用者未登録() throws IOException {
+    public void 利用者が未登録の場合() throws IOException {
         PrintWriter writer = new PrintWriter(in, true);
         writer.println("user3");
         writer.println("book1");
         this.main.start(new String[0]);
-        
-        assertTrue(out.toString().contains("次のユーザが登録されました: user3"));
+
+        assertTrue(out.toString().contains("次の利用者が登録されました: user3"));
     }
 }

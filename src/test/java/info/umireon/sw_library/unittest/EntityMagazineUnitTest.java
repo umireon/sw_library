@@ -28,14 +28,9 @@ import info.umireon.sw_library.EntityMagazine;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author umireon
- */
 public class EntityMagazineUnitTest {
-    
     @Test
-    public void nullname() {
+    public void 名前をnullにできない() {
         EntityMagazine mag = null;
         try {
             mag = new EntityMagazine(null);
@@ -46,7 +41,7 @@ public class EntityMagazineUnitTest {
     }
 
     @Test
-    public void name() {
+    public void 名前を持っている() {
         EntityMagazine mag;
         mag = new EntityMagazine("magname");
         assertEquals("magname", mag.getName());

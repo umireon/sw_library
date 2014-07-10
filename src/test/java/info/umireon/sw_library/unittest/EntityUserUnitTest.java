@@ -28,13 +28,9 @@ import info.umireon.sw_library.EntityUser;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author umireon
- */
 public class EntityUserUnitTest {
     @Test
-    public void nullname() {
+    public void 名前をnullにできない() {
         EntityUser user = null;
         try {
             user = new EntityUser(null);
@@ -45,7 +41,7 @@ public class EntityUserUnitTest {
     }
 
     @Test
-    public void name() {
+    public void 名前を持っている() {
         EntityUser user;
         user = new EntityUser("username");
         assertEquals("username", user.getName());

@@ -31,34 +31,30 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-/**
- *
- * @author umireon
- */
 public class EntityLoanIntegralTest {
     private EntityLoan loan;
     private EntityUser borrower;
     private EntityDate due;
-    
+
     @Before
     public void setup() {
         borrower = new EntityUser("borrower");
         due = new EntityDate().addDays(14);
         loan = new EntityLoan(borrower, due);
     }
-    
+
     @Test
-    public void getBorrower() {
+    public void 貸出者を持っている() {
         assertEquals(borrower, loan.getBorrower());
     }
-    
+
     @Test
-    public void getDue() {
+    public void 貸出期限を持っている() {
         assertEquals(due, loan.getDue());
     }
-    
+
     @Test
-    public void toStr() {
+    public void 文字列に変換できる() {
         assertTrue(loan.toString() instanceof String);
     }
 }

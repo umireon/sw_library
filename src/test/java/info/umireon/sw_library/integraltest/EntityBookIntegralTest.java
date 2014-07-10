@@ -31,37 +31,33 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
-/**
- *
- * @author umireon
- */
 public class EntityBookIntegralTest {
     private EntityBook book;
-    
+
     @Before
     public void setup() {
         book = new EntityBook("book");
     }
-    
+
     @Test
-    public void statusInitiallyEmpty() {
+    public void 初期状態では現況はnull() {
         assertNull(book.getStatus());
     }
-    
+
     @Test
-    public void statusInitiallyNotReserved() {
+    public void 初期状態では予約されていない() {
         assertFalse(book.isReserved());
     }
-    
+
     @Test
-    public void setStatus() {
+    public void 現況を設定できる() {
         EntityLoan loan = new EntityLoan(null, null);
         book.setStatus(loan);
         assertEquals(loan, book.getStatus());
     }
-    
+
     @Test
-    public void reservation() {
+    public void 予約を扱える() {
         EntityReservation reserve = new EntityReservation(null);
         book.addReservation(reserve);
         assertTrue(book.isReserved());

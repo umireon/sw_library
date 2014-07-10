@@ -36,13 +36,10 @@ import info.umireon.sw_library.EntityReservation;
 import info.umireon.sw_library.EntityUser;
 import info.umireon.sw_library.ReservedMaterialException;
 import info.umireon.sw_library.UnavailableMaterialException;
+import info.umireon.sw_library.UnknownMaterialException;
 import java.util.HashMap;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author umireon
- */
 public class ControlMaterialStepdefs {
     private ControlMaterial ctrlMaterial;
     private final HashMap<String, EntityUser> users = new HashMap<>();
@@ -67,29 +64,29 @@ public class ControlMaterialStepdefs {
     }
 
     @かつ("^(.+) が (.+) に予約されている$")
-    public void 書籍がユーザに予約されている(String matname, String username) {
+    public void 書籍が利用者に予約されている(String matname, String username) {
         EntityUser user = getUser(username);
         EntityMaterial mat = ctrlMaterial.getMaterial(matname);
         mat.addReservation(new EntityReservation(user));
     }
-    
+
     @もし("^(.+) が (.+) を貸出する$")
-    public void ユーザが資料を貸出する(String username, String matname)
+    public void 利用者が資料を貸出する(String username, String matname)
             throws Exception {
         EntityUser user = getUser(username);
         ctrlMaterial.lendMaterial(matname, user);
     }
     
     @ならば("^(.+) は (.+) に貸出中となる$")
-    public void 資料はユーザに貸出中となる(String matname, String username)
+    public void 資料は利用者に貸出中となる(String matname, String username)
             throws Exception {
         EntityMaterial mat = ctrlMaterial.getMaterial(matname);
         EntityLoan loan = (EntityLoan)mat.getStatus();
         assertEquals(loan.getBorrower().getName(), username);
     }
-    
+
     @ならば("^(.+) は (.+) を利用不可能である$")
-    public void ユーザは資料を利用不可能である(String username, String matname)
+    public void 利用者は資料を利用不可能である(String username, String matname)
             throws Exception {
         EntityUser user = getUser(username);
         try {
@@ -99,20 +96,32 @@ public class ControlMaterialStepdefs {
         }
         fail();
     }
-    
+
     @ならば("^(.+) は予約されていない$")
     public void 資料は予約されていない(String matname) throws Exception {
         EntityMaterial mat = ctrlMaterial.getMaterial(matname);
         assertFalse(mat.isReserved());
     }
-    
+
     @ならば("^(.+) は (.+) を予約済みであるために貸出できない$")
-    public void ユーザは資料を予約済みであるために貸出できない(String username, String matname)
-            throws Exception {
+    public void 利用者は資料を予約済みであるために貸出できない(String username,
+            String matname) throws Exception {
         EntityUser user = getUser(username);
         try {
             ctrlMaterial.lendMaterial(matname, user);
         } catch (ReservedMaterialException e) {
+            return;
+        }
+        fail();
+    }
+
+    @ならば("^(.+) は (.+) を存在しないために貸出できない$")
+    public void 利用者は資料を存在しないために貸出できない(String username,
+            String matname) throws Exception {
+        EntityUser user = getUser(username);
+        try {
+            ctrlMaterial.lendMaterial(matname, user);
+        } catch (UnknownMaterialException e) {
             return;
         }
         fail();
