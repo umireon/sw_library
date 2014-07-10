@@ -81,7 +81,7 @@ public class BoundaryLend {
             InputStreamReader isr = new InputStreamReader(stdin);
             BufferedReader br = new BufferedReader(isr);
 
-            stdout.println("資料貸出システム (v1.0.1)");
+            stdout.println("資料貸出システム (v1.0.2)");
             indexMaterials();
             indexUsers();
 
